@@ -1,0 +1,14 @@
+-
+  title: InWaves
+  id: title-number-1
+  description: Surfing club and news journal website dedicated for the love of the ocean and its elements.
+  thumbnail: /assets/images/portfolio/in-waves.jpg
+  bg-image: http://www.mrwallpaper.com/wallpapers/Waiting-Pier-Art-1280x720.jpg
+  bg-color: "#333"
+-
+  title: GuitarStudio.co.il
+  id: second-title-link
+  description: Full website, product navigation, search, main page, admin panel. Designed based on Twitter-Bootstrap.
+  thumbnail: /assets/images/portfolio/studioguitar.jpg
+  bg-image: http://www.mrwallpaper.com/wallpapers/Waiting-Pier-Art-1280x720.jpg
+  bg-color: "#333"

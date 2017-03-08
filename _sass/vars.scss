@@ -1,0 +1,139 @@
+// @Requier @import("mixins");
+
+// Font families
+$font-main: 'Heebo', sans-serif;
+$font-head: 'Heebo', sans-serif;
+$font-curly: 'Lobster', cursive;
+
+// Colors
+$white: #e7f7f4;
+$semi-white: #cfefec;
+$semi-accent: #183647;
+$accent: #62b8cb;
+$accent1: #cbc862; // yellow
+$accent2: #62b8cb; //
+$accent3: #c04343;// red
+$accent4: #63cb7c;// green
+$semi-black:#0c1c25;
+$black:#050c0e;
+
+//Width
+$padding-giant:144px;
+$padding-big:72px;
+$padding-medium:36px;
+$padding-small:16px;
+
+//Animations
+$duration-long:5s;
+$duration-medium:2s;
+$duration-short:1s;
+$duration-flick:.3s;
+@include keyframes(slide-from-top){
+  0% {
+    margin-top: -100%;
+  }
+  90%{
+    margin-top: inherit;
+  }
+}
+@include keyframes(slide-to-top){
+  0% {
+    margin-top: inherit;
+  }
+  90%{
+    margin-top:-100%;
+  }
+}
+@include keyframes(fade-in){
+  0% {
+    @include opacity(0);
+  }
+  90%{
+    @include opacity(1);
+  }
+}
+@include keyframes(flicker){
+  0% {
+    @include opacity(0.5);
+  }
+  50% {
+    @include opacity(0.75);
+  }
+  100%{
+    @include opacity(0.5);
+  }
+}
+@include keyframes (background-slide-from-top) {
+  0% {
+    background-position: 0 10%;
+  }
+	100% {
+    background-position: center;
+  }
+};
+
+%background-pattern-white{
+  background: url('../images/new_year_background.jpg') repeat;
+  background-color:  $white;
+}
+%background-pattern-black{
+  background: url('../images/binding_dark.png') repeat;
+  background-color:  $black;
+}
+%font-regular{
+  font-family: $font-main;
+  font-weight: 400;
+  @include font-size(16px);
+  @include breakpoint(tablet){@include font-size(16px);}
+  @include breakpoint(mobile){@include font-size(14px);}
+}
+%font-big{
+  font-family: $font-main;
+  font-weight: 100;
+  @include font-size(24px);
+  @include breakpoint(tablet){@include font-size(22px);font-weight: 400;}
+  @include breakpoint(mobile){@include font-size(20px);font-weight: 400;}
+}
+%heading-giant{
+  font-family:  $font-head;
+  font-weight: 100;
+  @include font-size(148px);
+  @include breakpoint(tablet){@include font-size(108px);}
+  @include breakpoint(mobile){@include font-size(84px);}
+}
+%heading-big{
+  font-family:  $font-head;
+  font-weight: 100;
+  @include font-size(108px);
+  @include breakpoint(tablet){@include font-size(84px);}
+  @include breakpoint(mobile){@include font-size(64px);}
+}
+%heading-medium{
+  font-family:  $font-head;
+  font-weight: 900;
+  @include font-size(84px);
+  @include breakpoint(tablet){@include font-size(64px);}
+  @include breakpoint(mobile){@include font-size(36px);}
+}
+%heading-small{
+  font-family:  $font-head;
+  font-weight: 900;
+  @include font-size(64px);
+  @include breakpoint(tablet){@include font-size(36px);}
+  @include breakpoint(mobile){@include font-size(24px);}
+}
+%heading-tiny{
+  font-family:  $font-head;
+  font-weight: 100;
+  @include font-size(36px);
+  @include breakpoint(tablet){@include font-size(30px);}
+  @include breakpoint(mobile){@include font-size(28px);}
+}
+
+// Construction
+%hero{
+  display: block;
+  width:100%;
+  min-height: 400px;
+  padding: $padding-medium;
+}

@@ -1,0 +1,45 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: xIsra
+email: israelkouperman@gmail.com
+description: xIsra, A personal portfolio/blog, contains the creations which I made over the years and my progress in the matters of development, design and music.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "xisra.com"
+
+github_username:  xisra
+username: Israel Kouperman
+user_description: Some description regarding my personal intrest.
+user_title: Web Developer, UX Designer, Android Developer.
+
+# Google-analytics
+google-analytics:
+  id: "UA-92170386-1"
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+permalink: :title/
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+  - jekyll-haml
+exclude:
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,263 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import "mixins";
+@import "normalize";
+@import "fa/font-awesome";
+@import "vars";
+
+@import url('https://fonts.googleapis.com/css?family=Heebo:100,400,900|Lobster');
+
+
+body{
+  @extend %font-regular;
+  @extend %background-pattern-white;
+  color:$black;
+  @include breakpoint(mobile){@include animation(fade-in $duration-medium ease);}
+}
+*{@include transition(width $duration-flick ease,font-size $duration-flick ease);}
+a{
+  color:$black;
+  @include transition(background-color $duration-flick ease,color $duration-flick ease);
+}
+img{
+  max-width: 100%;
+  height: auto;
+  overflow:hidden;
+  @include animation(fade-in $duration-long ease);
+  @include transition(width $duration-flick ease,filter $duration-flick ease);
+}
+
+h1{@extend %heading-giant;}
+h2{@extend %heading-big;}
+h3{@extend %heading-medium;}
+h4{@extend %heading-small;}
+h5{@extend %heading-tiny;}
+
+input,textarea,select,label{
+  width: 100%;
+  @extend %font-big;
+  padding: $padding-small;
+}
+input[type="submit"]{
+  border: 0;
+  background-color: $semi-black;
+  color: $semi-white;
+  font-weight: 900;
+  @include transition(background-color $duration-flick ease,color $duration-flick ease);
+  &:hover{
+    cursor: pointer;
+    background-color: $accent;
+    color: $semi-black;
+  }
+}
+
+.grid{
+  @include grid-maker(6,2%,"grid-");
+}
+.container{
+  display: block;
+  width:100%;
+  margin:0 auto;
+  max-width: 1220px;
+}
+.navigation{
+  ul{
+    display: block;
+    position: relative;
+    z-index: 1000;
+    @include breakpoint(desktop){
+      position: fixed;
+      @include animation(slide-from-top $duration-short ease);
+    }
+    @include breakpoint(tablet){background-color: $white;}
+    @include breakpoint(mobile){background-color: $white;}
+    width:100%;
+    max-width: 1920px;
+    margin:0 auto;
+    @extend %clearfix;
+
+    background-color: $white;
+    li{
+      float: left;
+      list-style: none;
+      @include breakpoint(desktop){
+        width:25%;
+      }
+      @include breakpoint(tablet){
+        width:50%;
+      }
+      @include breakpoint(mobile){
+        width:100%;
+      }
+      a{
+        @extend %heading-tiny;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: $semi-white;
+        padding: $padding-small 0;
+        &:hover{
+          color: $white;
+          background-color: $accent;
+        }
+        &.home:hover{background-color: $accent4;}
+        &.portfolio:hover{background-color: $accent1;}
+        &.blog:hover{background-color: $accent2;}
+        &.contact:hover{background-color: $accent3}
+      }
+    }
+  }
+}
+
+.hero{
+  @extend %hero;
+  .container{
+    @include animation(fade-in $duration-medium ease);
+  }
+}
+.hero.header{
+  background-color: $black;
+  background-image: url("../images/hero/ocean.jpg");
+  background-position: center;
+	background-repeat: no-repeat;
+  position: relative;
+  color: $black;
+  text-align: center;
+  padding:0;
+  padding-top: $padding-medium;
+  min-height:950px;
+  @include breakpoint(desktop){figure{@include center(both);}}
+  @include breakpoint(tablet){min-height:600px;figure{@include center(both);}}
+  @include breakpoint(mobile){min-height:400px;}
+  @include animation(background-slide-from-top $duration-long ease);
+  h1{
+    @include transition(max-height $duration-flick ease);
+  }
+  &:hover{
+
+  }
+  blockquote{
+    &:before{
+      @include opacity(0.1);
+      @include transition(opacity $duration-long ease);
+    }
+    @extend %heading-tiny;
+    padding: $padding-small;
+    background-color: $semi-white;
+    color: $semi-accent;
+    @include opacity(1);
+    @include animation(flicker $duration-long ease infinite);
+  }
+
+}
+.hero.about{
+  position: relative;
+  img{
+    @include border-radius(15px);
+    @include breakpoint(desktop){max-height: 720px;@include center(vertical);};
+    @include transition(max-height $duration-flick ease);
+    &:hover{
+      @include breakpoint(desktop){max-height: 780px;};
+    }
+  }
+}
+.hero.professions{
+  min-height:auto;
+  background-color: $semi-black;
+  i{
+    text-align: center;
+    @include font-size(136px);
+    @include transition(color $duration-flick ease,text-shadow $duration-flick ease);
+    &:hover{
+      color:$semi-accent;
+
+      @include text-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    }
+  }
+}
+.hero.projects{
+  background-color: $black;
+  .project{
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(desktop){min-height: 300px;};
+    @include breakpoint(tablet){min-height: 300px;};
+    @include breakpoint(mobile){min-height: 200px;};
+    img{
+      max-width: 100%;
+      @include center(both);
+      @include transition(max-width $duration-flick ease);
+    }
+    .info{
+      @include opacity(0.2);
+      max-width: 95%;
+      display:block;
+      text-align: center;
+      background-color: $semi-white;
+      @include center(both);
+      @include transition(opacity $duration-flick ease);
+      .title{
+        padding:$padding-small;
+        @extend %heading-tiny;
+      }
+      .description{
+        padding:$padding-small;
+        @extend %font-regular;
+        @include text-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+      }
+      a{
+        color: $black;
+        padding:$padding-small;
+        &:hover{
+          background-color: $accent;
+          color: $white;
+        }
+      }
+    }
+    &:hover{
+      img{max-width: 110%;}
+      .info{@include opacity(1);}
+    }
+
+  }
+}
+.hero.contact{
+  label{
+    @extend %heading-tiny;
+    i{
+      padding-right: $padding-small;
+    }
+  }
+}
+
+.footer{
+  @extend %hero;
+  padding: $padding-medium;
+  background-color: $semi-black;
+  color: $semi-white;
+  @extend %font-big;
+}
+.socials{
+  display: block;
+  @extend %clearfix;
+  li{
+    float:left;
+    width: 25%;
+    @include breakpoint(tablet){width: 50%;}
+    @include breakpoint(mobile){width:100%;float:none;}
+    a{
+      display: block;
+      @include font-size(96px);
+      @include border-radius(15px);
+      text-align: center;
+      color:$semi-white;
+      padding: 24px 0;
+      &:hover{
+        background-color: $accent;
+        color: $semi-black;
+      }
+    }
+  }
+}

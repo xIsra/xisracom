@@ -1,0 +1,21 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ site.title }}{% if page.title %} > {{ page.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="tags" content="{% if page.tags %}{{ page.tags | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.self.tags }}{% endif %}">
+  <link rel=”author” href=”https://plus.google.com/110404364783935533018”/>
+  <link rel="shortcut icon" type="image/png" href="{{ site.path }}/assets/images/icon.png">
+  <link rel="apple-touch-icon" href="{{ site.path }}/assets/images/icon-apple.png" />
+
+  <meta property=”og:title” content=”{{ site.title }}{% if page.title %} {{ page.title }}{% endif %}” />
+  <meta property=”og:image” content=”{{ site.path }}/assets/images/icon.png/>
+  <meta property=”og:url” content=”{{ site.path }}”/>
+  <meta property=”og:tags” content=”{% if page.tags %}{{ page.tags | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.self.tags }}{% endif %}”/>
+  <meta property=”og:description” content=”{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}”/>
+
+  <link rel="stylesheet" href="//cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+  <link rel="stylesheet" href="{{ "/assets/stylesheets/main.css" | prepend: site.baseurl }}">
+</head>

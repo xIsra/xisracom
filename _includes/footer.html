@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="container">
+    <div class="grid">
+      <figure class="grid-3">
+        <h4>{{ site.title }}</h4>
+        <p>{{ site.description}}</p>
+      </figure>
+      <aside class="grid-3">
+        <ul class="socials">
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=100014247494952" class="fa fa-facebook"></a>
+          </li>
+          <li>
+            <a href="https://github.com/xIsra" class="fa fa-github"></a>
+          </li>
+          <li>
+            <a href="https://codepen.io/xIsra/" class="fa fa-codepen"></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/israel-kouperman-b9b64a13a/" class="fa fa-linkedin"></a>
+          </li>
+          <li>
+            <a href="https://soundcloud.com/x-isra" class="fa fa-soundcloud"></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCjQ83z_nGwmjDk1MKj3gtUA" class="fa fa-youtube"></a>
+          </li>
+          <li>
+            <a href="mailto:israelkouperman@gmail.com" class="fa fa-envelope"></a>
+          </li>
+        </ul>
+      </aside>
+      <div class="grid-6"><p>&copy; {{site.title}} A non-profit website - <i class="fa fa-cc"></i></p></div>
+    </div>
+  </div>
+</footer>
+<script src="{{ "/assets/javascripts/sweet-scroll.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/javascripts/main.js" | prepend: site.baseurl }}"></script>
+{% include google-analytics.html %}

@@ -1,0 +1,92 @@
+---
+layout: default
+title: Designated Portfolio/Blog
+---
+<section class="hero header" id="home">
+    <figure class="container">
+      <h1>Design Ocean</h1>
+      <blockquote>"Design is not making beauty, beauty emerges from selection,affinities, integration, love." <italic>- Louis Khan</italic></blockquote>
+    </figure>
+</section>
+<section class="hero about" id="about">
+  <div class="container">
+    <div class="grid">
+      <div class="grid-3">
+        <h3>{{site.username}}</h3>
+        <h5>{{site.data.self.description}}</h5>
+      </div>
+      <div class="grid-3">
+        <img src="/assets/images/me.png" />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero professions">
+  <div class="container grid">
+    <i class="grid-1 devicon-photoshop-plain"></i>
+    <i class="grid-1 devicon-javascript-plain"></i>
+    <i class="grid-1 devicon-html5-plain-wordmark"></i>
+    <i class="grid-1 devicon-css3-plain"></i>
+    <i class="grid-1 devicon-sass-plain"></i>
+    <i class="grid-1 devicon-react-plain"></i>
+    <i class="grid-1 devicon-php-plain"></i>
+    <i class="grid-1 devicon-ruby-plain"></i>
+    <i class="grid-1 devicon-rails-plain"></i>
+    <i class="grid-1 devicon-python-plain"></i>
+    <i class="grid-1 devicon-nodejs-plain"></i>
+    <i class="grid-1 devicon-mysql-plain"></i>
+  </div>
+</section>
+<section class="hero projects" id="portfolio">
+  <div class="grid">
+    {% for project in site.data.projects %}
+      <div class="project grid-2">
+        <img src="{{ project.thumbnail }}" />
+        <div class="info">
+          <h4 class="title">{{ project.title }}</h4>
+          <p class="description">{{ project.description }}</p>
+          <a class="link" href="#watch-"><i class="fa fa-chevron-up"></i></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="hero contact" id="contact">
+  <div class="container">
+      <h4>Contact me:</h4>
+    <form method="POST" class="grid">
+      <div class="grid-3">
+        <label for="fullname"><i class="fa fa-address-card"></i>Full name:</label>
+      </div>
+      <div class="grid-3">
+        <input type="text" name="fullname" placeholder="Write your full name here..." />
+      </div>
+      <div class="grid-3">
+        <label for="email"><i class="fa fa-envelope"></i>Email address:</label>
+      </div>
+      <div class="grid-3">
+        <input type="password"  name="email" placeholder="myemail@address.com..." />
+      </div>
+      <div class="grid-3">
+        <label for="reason"><i class="fa fa-list-ul"></i>Reason for contacting:</label>
+      </div>
+      <div class="grid-3">
+        <select name="reason">
+          <option value="hire">Hire</option>
+          <option value="help">I need help with something</option>
+          <option value="coop">cooporating reasons</option>
+          <option value="bug">There is a bug on the site.</option>
+        </select>
+      </div>
+      <div class="grid-3">
+        <label for="content"><i class="fa fa-pencil"></i>Message:</label>
+      </div>
+      <div class="grid-3">
+        <textarea name="content" placeholder="Write your message here..."></textarea>
+      </div>
+      <div class="grid-6">
+        <input type="submit" name="submit" value="Send"></input>
+      </div>
+    </form>
+  </div>
+</section>

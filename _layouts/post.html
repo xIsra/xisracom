@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+      {% if page.image %}
+      <section class="hero header" style="background-image:url('{{ page.image }}')">
+          <figure class="container">
+            <h1>{{page.title}}</h1>
+          </figure>
+      </section>
+      {% endif %}
+      <section class="hero">
+        <div class="container">
+          {% if page.image %}
+          {% else%}
+            <h1>{{page.title}}</h1>
+          {% endif %}
+          {% if page.soundcloud %}
+            <iframe class="hero" width="100%" height="450" scrolling="no" frameborder="no" src="{{ page.soundcloud }}">
+            </iframe>
+          {% endif %}
+          {{ content }}
+        </div>
+      </section>
+      {% include footer.html %}
+  </body>
