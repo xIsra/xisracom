@@ -25,8 +25,8 @@ img{
   max-width: 100%;
   height: auto;
   overflow:hidden;
-  @include animation(fade-in $duration-long ease);
-  @include transition(width $duration-flick ease,filter $duration-flick ease);
+  @include animation(fade-in $duration-short ease);
+  @include transition(width $duration-flick ease);
 }
 
 h1{@extend %heading-giant;}
@@ -64,6 +64,9 @@ input[type="submit"]{
 }
 .navigation{
   ul{
+    .top{
+      background-color: $white;
+    }
     display: block;
     position: relative;
     z-index: 1000;
@@ -77,8 +80,6 @@ input[type="submit"]{
     max-width: 1920px;
     margin:0 auto;
     @extend %clearfix;
-
-    background-color: $white;
     li{
       float: left;
       list-style: none;
@@ -128,6 +129,7 @@ input[type="submit"]{
   padding:0;
   padding-top: $padding-medium;
   min-height:950px;
+  @include select(none);
   @include breakpoint(desktop){figure{@include center(both);}}
   @include breakpoint(tablet){min-height:600px;figure{@include center(both);}}
   @include breakpoint(mobile){min-height:400px;}
@@ -178,17 +180,22 @@ input[type="submit"]{
   }
 }
 .hero.projects{
+  position: relative;
   background-color: $black;
   .project{
     position: relative;
     overflow: hidden;
+    cursor: pointer;
     @include breakpoint(desktop){min-height: 300px;};
     @include breakpoint(tablet){min-height: 300px;};
     @include breakpoint(mobile){min-height: 200px;};
+
     img{
-      max-width: 100%;
       @include center(both);
-      @include transition(max-width $duration-flick ease);
+      @include transition(
+        max-width $duration-flick ease,
+        width $duration-flick ease
+      );
     }
     .info{
       @include opacity(0.2);
@@ -197,7 +204,12 @@ input[type="submit"]{
       text-align: center;
       background-color: $semi-white;
       @include center(both);
-      @include transition(opacity $duration-flick ease);
+      @include transition(
+        position $duration-flick ease,
+        top $duration-flick ease,
+        left $duration-flick ease,
+        opacity $duration-flick ease
+      );
       .title{
         padding:$padding-small;
         @extend %heading-tiny;
@@ -220,6 +232,40 @@ input[type="submit"]{
       img{max-width: 110%;}
       .info{@include opacity(1);}
     }
+    &.open{
+      overflow: visible;
+      width:100%;
+      min-height:600px;
+      margin: 0;
+      z-index: 500;
+      @include center(horizontal);
+      .info{
+        @include opacity(0.2);
+        max-width: 40%;
+        top:100%;
+        .title{
+          padding:$padding-small;
+          @extend %heading-medium;
+        }
+        .description{
+          padding:$padding-small;
+          @extend %font-big;
+          @include text-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        }
+        &:hover{
+            @include opacity(0.2);
+        }
+
+      }
+    }
+    @include transition(
+      position $duration-flick ease,
+      top $duration-flick ease,
+      left $duration-flick ease,
+      opacity $duration-flick ease,
+      width $duration-flick ease,
+      min-height $duration-flick ease
+    );
 
   }
 }
