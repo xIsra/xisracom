@@ -52,7 +52,7 @@
   </ul>
 </nav>
 
-      <section class="hero header" id="home">
+      <section class="hero header top-hero" id="home">
     <figure class="container">
       <h1>Design Ocean</h1>
       <blockquote>"Design is not making beauty, beauty emerges from selection,affinities, integration, love." <italic>- Louis Khan</italic></blockquote>
@@ -66,7 +66,7 @@
         <h5>I am a 21 y/o web and design enthusiast with the desire to improve the visual and interactive world of the web and mobile. This portfolio website will guide you through my journy to the world of technology.</h5>
       </div>
       <div class="grid-3">
-        <img src="/assets/images/me.png" />
+        <img src="/assets/images/me.jpg" />
       </div>
     </div>
   </div>
@@ -89,27 +89,38 @@
 <section class="hero projects" id="portfolio">
   <div class="grid">
     
-      <div class="grid-3">
+      <div class="grid-2">
         <div class="project">
           <img src="/assets/images/portfolio/in-waves.jpg" />
           <div class="info">
             <h4 class="title">InWaves</h4>
             <p class="description">Surfing club and news journal website dedicated for the love of the ocean and its elements.</p>
-            <a class="link" href="#watch-"><i class="fa fa-chevron-up"></i></a>
+            <a class="link"><i class="fa fa-chevron-up"></i></a>
           </div>
         </div>
       </div>
     
-      <div class="grid-3">
+      <div class="grid-2">
         <div class="project">
           <img src="/assets/images/portfolio/studioguitar.jpg" />
           <div class="info">
             <h4 class="title">GuitarStudio.co.il</h4>
             <p class="description">Full website, product navigation, search, main page, admin panel. Designed based on Twitter-Bootstrap.</p>
-            <a class="link" href="#watch-"><i class="fa fa-chevron-up"></i></a>
+            <a class="link"><i class="fa fa-chevron-up"></i></a>
           </div>
         </div>
       </div>
+    
+  </div>
+</section>
+<section class="hero blog" id="blog">
+  <div class="grid">
+    
+        <a href="/music/2017/03/11/a-blog-post-for-fun/" class="grid-2 blog-item image-container">
+          <img src="https://static.pexels.com/photos/24353/pexels-photo.jpg" />
+          <h5 class="title">A Blog Post For Fun</h5>
+          <p class="category">music</p>
+        </a>
     
   </div>
 </section>
@@ -185,10 +196,21 @@
           </li>
         </ul>
       </aside>
-      <div class="grid-6"><p>&copy; xIsra Proudly hosted on <a href="https://github.com/xIsra/xisracom/"><i class="fa fa-github"></i>github</a></p></div>
+      <div class="grid-6">
+        <p>&copy; xIsra Proudly hosted on <a href="https://github.com/xIsra/xisracom/"><i class="fa fa-github"></i>github</a></p>
+        <div class="fb-like" data-href="http://localhost:4000" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+      </div>
     </div>
   </div>
 </footer>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <script src="/assets/javascripts/sweet-scroll.min.js"></script>
 <script src="/assets/javascripts/jquery-3.1.1.slim.min.js"></script>
 <script src="/assets/javascripts/main.js"></script>

@@ -2,7 +2,7 @@
 layout: default
 title: Designated Portfolio/Blog
 ---
-<section class="hero header" id="home">
+<section class="hero header top-hero" id="home">
     <figure class="container">
       <h1>Design Ocean</h1>
       <blockquote>"Design is not making beauty, beauty emerges from selection,affinities, integration, love." <italic>- Louis Khan</italic></blockquote>
@@ -16,7 +16,7 @@ title: Designated Portfolio/Blog
         <h5>{{site.data.self.description}}</h5>
       </div>
       <div class="grid-3">
-        <img src="{{ "/assets/images/me.png" | prepend: site.baseurl }}" />
+        <img src="{{ "/assets/images/me.jpg" | prepend: site.baseurl }}" />
       </div>
     </div>
   </div>
@@ -39,16 +39,27 @@ title: Designated Portfolio/Blog
 <section class="hero projects" id="portfolio">
   <div class="grid">
     {% for project in site.data.projects %}
-      <div class="grid-3">
+      <div class="grid-2">
         <div class="project">
           <img src="{{ project.thumbnail }}" />
           <div class="info">
             <h4 class="title">{{ project.title }}</h4>
             <p class="description">{{ project.description }}</p>
-            <a class="link" href="#watch-"><i class="fa fa-chevron-up"></i></a>
+            <a class="link"><i class="fa fa-chevron-up"></i></a>
           </div>
         </div>
       </div>
+    {% endfor %}
+  </div>
+</section>
+<section class="hero blog" id="blog">
+  <div class="grid">
+    {% for post in site.posts %}
+        <a href="{{ post.url }}" class="grid-2 blog-item image-container">
+          <img src="{% if post.image %}{{ post.image  }}{% else %}/assets/images/blog-default.jpg{% endif %}" />
+          <h5 class="title">{{ post.title }}</h5>
+          <p class="category">{{ post.categories }}</p>
+        </a>
     {% endfor %}
   </div>
 </section>

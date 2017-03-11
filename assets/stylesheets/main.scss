@@ -60,13 +60,17 @@ input[type="submit"]{
   display: block;
   width:100%;
   margin:0 auto;
-  max-width: 1220px;
+  max-width: $width-big;
+  @include transition(max-width $duration-flick ease);
 }
 .navigation{
+  .full{
+    background-color: $white;
+    a{
+    color: $semi-accent;}
+  }
   ul{
-    .top{
-      background-color: $white;
-    }
+    @extend %clearfix;
     display: block;
     position: relative;
     z-index: 1000;
@@ -74,24 +78,17 @@ input[type="submit"]{
       position: fixed;
       @include animation(slide-from-top $duration-short ease);
     }
-    @include breakpoint(tablet){background-color: $white;}
-    @include breakpoint(mobile){background-color: $white;}
     width:100%;
-    max-width: 1920px;
+    max-width: $width-giant;
     margin:0 auto;
-    @extend %clearfix;
+    // background-color: $white;
+    @include transition(background-color $duration-flick ease);
     li{
       float: left;
       list-style: none;
-      @include breakpoint(desktop){
-        width:25%;
-      }
-      @include breakpoint(tablet){
-        width:50%;
-      }
-      @include breakpoint(mobile){
-        width:100%;
-      }
+      @include breakpoint(desktop){width:25%;}
+      @include breakpoint(tablet){width:50%;}
+      @include breakpoint(mobile){width:100%;}
       a{
         @extend %heading-tiny;
         display: block;
@@ -111,13 +108,31 @@ input[type="submit"]{
     }
   }
 }
-
 .hero{
   @extend %hero;
   .container{
     @include animation(fade-in $duration-medium ease);
   }
+  &.black{
+    background-color: $black;
+    color:$semi-white;
+  }
 }
+.image-container{
+  position: relative;
+  overflow: hidden;
+  img{
+    @include center(both);
+    @include transition(max-width $duration-flick ease);
+  }
+  &:hover{
+    img{
+      max-width: 110%;
+    }
+  }
+}
+
+
 .hero.header{
   background-color: $black;
   background-image: url("../images/hero/ocean.jpg");
@@ -168,6 +183,7 @@ input[type="submit"]{
 .hero.professions{
   min-height:auto;
   background-color: $semi-black;
+  @include breakpoint(desktop){&:hover{.container{max-width: 95%;}}};
   i{
     text-align: center;
     @include font-size(136px);
@@ -238,6 +254,7 @@ input[type="submit"]{
       min-height:600px;
       margin: 0;
       z-index: 500;
+      border: 10px #111;
       @include center(horizontal);
       .info{
         @include opacity(0.2);
@@ -267,6 +284,33 @@ input[type="submit"]{
       min-height $duration-flick ease
     );
 
+  }
+}
+.hero.blog{
+  max-height: 1000px;
+  overflow: auto;
+  background-color: $semi-accent;
+  .blog-item{
+    min-height: 250px;
+    background-color: $semi-black;
+    img{}
+    .title{
+      position: absolute;
+      top: calculateRem(4px);
+      left: calculateRem(4px);
+      padding: calculateRem(4px);
+      text-align: center;
+      color:$semi-white;
+      background-color: $semi-black;
+    }
+    .category{
+      position: absolute;
+      bottom: calculateRem(4px);
+      right:calculateRem(4px);
+      padding: calculateRem(4px);
+      color:$semi-black;
+      background-color: $semi-white;
+    }
   }
 }
 .hero.contact{
