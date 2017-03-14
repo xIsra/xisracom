@@ -17,6 +17,7 @@ title: xIsra
 email: israelkouperman@gmail.com
 description: xIsra, A personal portfolio/blog, contains the creations which I made over the years and my progress in the matters of development, design and music.
 baseurl: "" # the subpath of your site, e.g. /blog
+path: "http://xisra.com"
 url: "xisra.com"
 
 github_username:  xisra
