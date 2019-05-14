@@ -3,7 +3,7 @@ ruby RUBY_VERSION
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-gem "jekyll", "3.4.1"
+gem "jekyll", ">= 3.6.3"
 
 gem "minima", "~> 2.0"
 
