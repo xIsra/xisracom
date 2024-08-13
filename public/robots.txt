@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /login/
+Disallow: /register/
+Disallow: /private/
+Disallow: /cart/
+Allow: /
+
+# Allow crawling of all .js, .css files
+Allow: *.css
+Allow: *.js
+
+# Sitemap location
+Sitemap: https://xisra.com/sitemap.xml
