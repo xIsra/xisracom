@@ -36,36 +36,35 @@ export default function HeroHome() {
                                 data-aos="zoom-y-out"
                                 data-aos-delay={300}
                             >
-                                I'm a web developer with a passion for creating beautiful and functional websites.
-                                I'm also an adventurer who loves to travel and explore new places.
+
                             </p>
-                            <div
-                                className="relative before:absolute before:inset-0 before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
-                                <div
-                                    className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center"
-                                    data-aos="zoom-y-out"
-                                    data-aos-delay={450}
-                                >
-                                    <a
-                                        className="btn group text-xl font-extralight mb-4 w-full bg-gradient-to-t from-red-600 to-red-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                                        href="#0"
-                                    >
-                                        <a href={'#contact'} className="relative inline-flex items-center">
-                                            Sign to our newsletter
-                                            <span
-                                                className="ml-1 tracking-normal text-red-50 transition-transform group-hover:translate-x-0.5">
-                        -&gt;
-                      </span>
-                                        </a>
-                                    </a>
-                                    <a
-                                        className="btn text-xl font-extralight w-full bg-red-50 text-gray-800 shadow hover:bg-red-100 sm:ml-4 sm:w-auto"
-                                        href="#technology"
-                                    >
-                                        Learn More
-                                    </a>
-                                </div>
-                            </div>
+                      {/*      <div*/}
+                      {/*          className="relative before:absolute before:inset-0 before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">*/}
+                      {/*          <div*/}
+                      {/*              className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center"*/}
+                      {/*              data-aos="zoom-y-out"*/}
+                      {/*              data-aos-delay={450}*/}
+                      {/*          >*/}
+                      {/*              <a*/}
+                      {/*                  className="btn group text-xl font-extralight mb-4 w-full bg-gradient-to-t from-red-600 to-red-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"*/}
+                      {/*                  href="#0"*/}
+                      {/*              >*/}
+                      {/*                  <a href={'#contact'} className="relative inline-flex items-center">*/}
+                      {/*                      Sign to our newsletter*/}
+                      {/*                      <span*/}
+                      {/*                          className="ml-1 tracking-normal text-red-50 transition-transform group-hover:translate-x-0.5">*/}
+                      {/*  -&gt;*/}
+                      {/*</span>*/}
+                      {/*                  </a>*/}
+                      {/*              </a>*/}
+                      {/*              <a*/}
+                      {/*                  className="btn text-xl font-extralight w-full bg-red-50 text-gray-800 shadow hover:bg-red-100 sm:ml-4 sm:w-auto"*/}
+                      {/*                  href="#technology"*/}
+                      {/*              >*/}
+                      {/*                  Learn More*/}
+                      {/*              </a>*/}
+                      {/*          </div>*/}
+                      {/*      </div>*/}
                         </div>
                     </div>
                     {/* Hero image */}

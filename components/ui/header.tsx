@@ -33,24 +33,8 @@ export default function Header() {
           <ul className="flex flex-1 items-center justify-end gap-2 text-lg">
             <li>
               <Link
-                href="#home"
-                className="btn shadow-none hover:bg-red-500"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#technology"
-                className="btn shadow-none hover:bg-red-500"
-              >
-                Technology
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="#contact"
-                className="btn shadow-none hover:bg-red-500"
+                className="btn shadow-none hover:bg-red-800"
               >
                 Contact
               </Link>
