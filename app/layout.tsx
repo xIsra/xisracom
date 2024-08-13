@@ -5,6 +5,7 @@ import {Amatic_SC, Lexend} from "next/font/google";
 
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
+import Script from "next/script";
 
 const lexend = Lexend({
     subsets: ["latin"],
@@ -84,15 +85,8 @@ export default function RootLayout({
             <Footer border={true}/>
         </div>
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-73NVT9KEPK"></script>
-        <script>{`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-73NVT9KEPK');
-            `}
-        </script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-73NVT9KEPK" />
+        <Script src={'/gtag.js'} />
         </body>
         </html>
     );
