@@ -6,6 +6,7 @@ import {Amatic_SC, Lexend, Yesteryear} from "next/font/google";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import Script from "next/script";
+import {Viewport} from "next";
 
 const lexend = Lexend({
     subsets: ["latin"],
@@ -29,6 +30,13 @@ const yesteryear = Yesteryear({
     weight: "400",
 });
 
+export const viewport: Viewport = {
+    themeColor: "#ec407a",
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+}
+
 export const metadata = {
     title: {
         template: 'xIsra - %s',
@@ -36,8 +44,8 @@ export const metadata = {
     },
     description: "I'm Israel Kouperman, a software engineer, designer, and adventurer. I'm passionate about creating software, designing experiences, and exploring the world.",
     keywords: ['xisra', 'blog', 'portfolio', 'personal', 'website', 'developer', 'designer', 'engineer', 'software', 'adventure', 'vlog', 'app'],
-    colorScheme: 'light dark',
-    themeColor: '#ec407a',
+    // colorScheme: 'light dark',
+    // themeColor: '#ec407a',
     icons: {
         icon: '/favicon.ico', // Default favicon
         shortcut: '/favicon-16x16.png', // Shortcut icon (optional)

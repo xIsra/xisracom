@@ -1,6 +1,9 @@
 import Hero from "@/components/HeroHome";
 import HeroPortfolio from "@/components/HeroPortfolio";
 import {HeroContact} from "../components/HeroContact/HeroContact";
+import fs from "fs";
+import {getVideosByPlaylist} from "@/libs/yt/yt.repository";
+import config from "@/libs/config";
 
 export const metadata = {
     icons: {

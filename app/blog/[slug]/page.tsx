@@ -52,6 +52,7 @@ export async function generateMetadata({
 
     return {
         title: data.title,
+        keywords: data.keywords,
     };
 }
 

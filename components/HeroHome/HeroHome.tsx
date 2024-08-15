@@ -54,7 +54,7 @@ export function HeroHome() {
                             >
                                 Im a full stack developer with a passion for creation. I am always looking to learn new
                                 things and improve my skills.
-                                <br />
+                                <br/>
                                 <span className="block mt-4 text-red-400">
                                     Feel free to reach out to me. I would love to hear from you!
                                 </span>
@@ -74,15 +74,12 @@ export function HeroHome() {
                                     </a>
                                     <a
                                         className="btn group text-xl font-extralight w-full bg-red-400 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                                        href="#0"
+                                        href='#contact'
                                     >
-                                        <a href={'#contact'} className="relative inline-flex items-center">
-                                            Contact me
                                             <span
                                                 className="ml-1 tracking-normal text-red-50 transition-transform group-hover:translate-x-0.5">
                         -&gt;
                       </span>
-                                        </a>
                                     </a>
                                 </div>
                             </div>
