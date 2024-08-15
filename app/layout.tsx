@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/style.css";
 
-import {Amatic_SC, Lexend} from "next/font/google";
+import {Amatic_SC, Lexend, Yesteryear} from "next/font/google";
 
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
@@ -21,18 +21,23 @@ const amatic = Amatic_SC({
     weight: "700",
 });
 
+const yesteryear = Yesteryear({
+    subsets: ['latin'],
+    variable: "--font-yesteryear",
+    display: "swap",
+    style: 'normal',
+    weight: "400",
+});
+
 export const metadata = {
     title: {
-        template: 'xisra - %s',
-        default: 'xisra.com',
+        template: 'xIsra - %s',
+        default: 'xIsra.com',
     },
-    description: "My personal website, blog and portfolio.",
-    keywords: [],
-    colorScheme: 'dark',
-    themeColor: [
-        {color: '#f3f4f6', media: '(prefers-color-scheme: light)'},
-        {color: '#1a202c', media: '(prefers-color-scheme: dark)'},
-    ],
+    description: "I'm Israel Kouperman, a software engineer, designer, and adventurer. I'm passionate about creating software, designing experiences, and exploring the world.",
+    keywords: ['xisra', 'blog', 'portfolio', 'personal', 'website', 'developer', 'designer', 'engineer', 'software', 'adventure', 'vlog', 'app'],
+    colorScheme: 'light dark',
+    themeColor: '#ec407a',
     icons: {
         icon: '/favicon.ico', // Default favicon
         shortcut: '/favicon-16x16.png', // Shortcut icon (optional)
@@ -70,10 +75,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`scroll-smooth`}>
         <body
-            className={`${lexend.variable} ${amatic.variable} bg-gray-900 font-lexend tracking-tight text-gray-100 antialiased`}
-            style={{
-                background: 'linear-gradient(235deg, #FFFFFF 0%, #000F25 100%), linear-gradient(180deg, #6100FF 0%, #000000 100%), linear-gradient(235deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%), linear-gradient(125deg, #FFA3AC 0%, #FFA3AC 40%, #00043C calc(40% + 1px), #00043C 60%, #005D6C calc(60% + 1px), #005D6C 70%, #00C9B1 calc(70% + 1px), #00C9B1 100%);background-blend-mode: soft-light, screen, darken, normal'
-            }}
+            className={`${lexend.variable} ${amatic.variable} ${yesteryear.variable} bg-gray-950 font-lexend tracking-tight text-gray-100 antialiased`}
         >
 
         <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
@@ -85,8 +87,8 @@ export default function RootLayout({
             <Footer border={true}/>
         </div>
 
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-73NVT9KEPK" />
-        <Script src={'/gtag.js'} />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-73NVT9KEPK"/>
+        <Script src={'/gtag.js'}/>
         </body>
         </html>
     );

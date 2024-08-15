@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Stripes from "@/public/images/stripes.svg";
+// import Stripes from "@/public/images/stripes.svg";
 
 export default function PageIllustration() {
   return (
@@ -10,13 +10,13 @@ export default function PageIllustration() {
         className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 transform"
         aria-hidden="true"
       >
-        <Image
-          className="max-w-none"
-          src={Stripes}
-          width={768}
-          alt="Stripes"
-          priority
-        />
+        {/*<Image*/}
+        {/*  className="max-w-none"*/}
+        {/*  src={Stripes}*/}
+        {/*  width={768}*/}
+        {/*  alt="Stripes"*/}
+        {/*  priority*/}
+        {/*/>*/}
       </div>
       {/* Circles */}
       <div

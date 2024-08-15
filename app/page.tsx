@@ -1,4 +1,6 @@
-import LargeTestimonial from "@/components/large-testimonial";
+import Hero from "@/components/HeroHome";
+import HeroPortfolio from "@/components/HeroPortfolio";
+import {HeroContact} from "../components/HeroContact/HeroContact";
 
 export const metadata = {
     icons: {
@@ -28,14 +30,12 @@ export const metadata = {
     },
 };
 
-import Hero from "@/components/hero-home";
-import Cta from "@/components/cta";
-
 export default function Home() {
     return (
         <>
             <Hero/>
-            <Cta />
+            <HeroPortfolio/>
+            <HeroContact />
         </>
     );
 }
