@@ -2,6 +2,7 @@ import Image from 'next/image'
 import {YouTubePlaylist} from "@/components/HeroPortfolio/YouTubePlaylist";
 import Link from "next/link";
 import channelCover from './channel-cover.png'
+import navigation from './navigation.jpg'
 
 export function HeroPortfolio() {
     return (
@@ -31,27 +32,11 @@ export function HeroPortfolio() {
                             className="container mx-auto max-w-6xl">
                             <div className="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3">
                                 <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
-                                    <Image src="/demo/code1.jpg" alt="awesome" width={600} height={400}
+                                    <Image src={navigation} alt="action-map" width={600} height={400}
                                            className="object-cover w-full h-80"/>
                                     <div className="p-4">
-                                        <h3 className="text-xl font-semibold">Awesome</h3>
-                                        <p className="text-gray-700"></p>
-                                    </div>
-                                </div>
-                                <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
-                                    <Image src="/demo/code1.jpg" alt="awesome" width={600} height={400}
-                                           className="object-cover w-full h-80"/>
-                                    <div className="p-4">
-                                        <h3 className="text-xl font-semibold">Awesome</h3>
-                                        <p className="text-gray-700"></p>
-                                    </div>
-                                </div>
-                                <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
-                                    <Image src="/demo/code1.jpg" alt="awesome" width={600} height={400}
-                                           className="object-cover w-full h-80"/>
-                                    <div className="p-4">
-                                        <h3 className="text-xl font-semibold">Awesome</h3>
-                                        <p className="text-gray-700"></p>
+                                        <h3 className="text-xl font-semibold">Action Map</h3>
+                                        <p className="text-gray-700">To be published soon!</p>
                                     </div>
                                 </div>
                             </div>
