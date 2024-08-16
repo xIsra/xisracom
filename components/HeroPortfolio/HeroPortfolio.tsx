@@ -39,6 +39,20 @@ export function HeroPortfolio() {
                                         <p className="text-gray-700">To be published soon!</p>
                                     </div>
                                 </div>
+                                {[1, 2].map((v) => (
+                                    <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                                        <Image src={"https://placehold.co/600x400?text=?"} alt={"tbd"+v} width={600}
+                                               height={400}
+                                               className="object-cover w-full h-80"/>
+                                        <div className="p-4">
+                                            <h3 className="text-xl font-semibold">Comming soon!</h3>
+                                            <p className="text-gray-700">
+                                                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                                                I'm working on this project right now. Stay tuned for updates!
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -51,26 +65,28 @@ export function HeroPortfolio() {
                             data-aos-delay={50}
                             data-aos-duration={1000}
                             className="absolute inset-0 bg-cover bg-center z-0 ">
-                            <Image src={channelCover} alt="portfolio" layout="fill" className="object-cover filter blur-[4px] opacity-5 transform scale-115"/>
+                            <Image src={channelCover} alt="portfolio" layout="fill"
+                                   className="object-cover filter blur-[4px] opacity-5 transform scale-115"/>
                         </div>
 
                         <div className="relative z-10 py-24 lg:py-36">
-                        <h2
-                            data-aos="fade-down"
-                            data-aos-delay={50}
-                            className="mb-6 text-6xl font-lexend font-extralight">
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            My Youtube channel
-                        </h2>
-                        <p
-                            data-aos="fade-down"
-                            data-aos-delay={200}
-                            className="bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text text-transparent font-bold">
-                            I have a YouTube channel where I post my adventures. <Link
-                            href={'http://youtube.com/@israkouper'} className={'hover:text-gray-900 transition-colors'}>Check
-                            it out!</Link>
-                        </p>
-                        <YouTubePlaylist/>
+                            <h2
+                                data-aos="fade-down"
+                                data-aos-delay={50}
+                                className="mb-6 text-6xl font-lexend font-extralight">
+                                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                                My Youtube channel
+                            </h2>
+                            <p
+                                data-aos="fade-down"
+                                data-aos-delay={200}
+                                className="bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text text-transparent font-bold">
+                                I have a YouTube channel where I post my adventures. <Link
+                                href={'http://youtube.com/@israkouper'}
+                                className={'hover:text-gray-900 transition-colors'}>Check
+                                it out!</Link>
+                            </p>
+                            <YouTubePlaylist/>
                         </div>
                     </div>
                 </div>
