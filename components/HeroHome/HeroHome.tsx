@@ -20,13 +20,9 @@ export function HeroHome() {
     return (
         <section id="home" className="relative h-screen relative  overflow-hidden">
             <FloatingIcons />
-            {/*<PageIllustration />*/}
-            {/*<img src={'/images/algae/algae-pool.jpg'} alt="algae pool"*/}
-            {/*     className="absolute inset-0 object-cover w-full h-full opacity-40 filter blur-[4px]"/>*/}
             <div className="mx-auto max-w-7xl h-full flex flex-col justify-center">
                 {/* Hero content */}
                 <div className="pb-12 pt-50 px-8 md:pb-24 md:pt-36">
-                    {/*<div className="">*/}
                     {/* Section header */}
                     <div className="pb-12 text-center md:pb-16">
                         {/* avatar image*/}
@@ -43,7 +39,7 @@ export function HeroHome() {
                             />
                         </div>
                         <h1
-                            className=" text-6xl font-lexend font-extralight"
+                            className="mb-2 text-6xl font-lexend font-extralight"
                             data-aos="zoom-y-out"
                             data-aos-delay={150}
                         >

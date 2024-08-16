@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import {YouTubePlaylist} from "@/components/HeroPortfolio/YouTubePlaylist";
 import Link from "next/link";
+import channelCover from './channel-cover.png'
 
 export function HeroPortfolio() {
     return (
-        <section id="portfolio" className="relative min-h-screen bg-red-400 px-20">
+        <section id="portfolio" className="relative min-h-screen bg-red-400">
             <div className="mx-auto h-full flex flex-col justify-center">
                 {/* Hero content */}
                 <div className="py-24 md:py-32">
@@ -59,8 +60,15 @@ export function HeroPortfolio() {
                     <div
                         className="w-full h-px bg-gradient-to-r from-transparent via-black/25 to-transparent mb-12 md:mb-16"/>
 
-                    <div className="pb-12 text-center">
+                    <div className="relative pb-12 text-center">
+                        {/* background cover image greyscale with a bit of blur */}
+                        <div
+                            className="absolute inset-0 bg-cover bg-center z-0 overflow-hidden">
+                            <Image src={channelCover} alt="portfolio" layout="fill"
+                                   className="object-cover filter blur-[3px] opacity-10"/>
+                        </div>
 
+                        <div className="relative z-10 py-24 lg:py-36">
                         <h2
                             data-aos="fade-down"
                             data-aos-delay={50}
@@ -77,6 +85,7 @@ export function HeroPortfolio() {
                             it out!</Link>
                         </p>
                         <YouTubePlaylist/>
+                        </div>
                     </div>
                 </div>
             </div>
