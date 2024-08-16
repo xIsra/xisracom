@@ -61,11 +61,12 @@ export function HeroPortfolio() {
                         className="w-full h-px bg-gradient-to-r from-transparent via-black/25 to-transparent mb-12 md:mb-16"/>
 
                     <div className="relative pb-12 text-center">
-                        {/* background cover image greyscale with a bit of blur */}
                         <div
-                            className="absolute inset-0 bg-cover bg-center z-0 overflow-hidden">
-                            <Image src={channelCover} alt="portfolio" layout="fill"
-                                   className="object-cover filter blur-[3px] opacity-10"/>
+                            data-aos={'fade'}
+                            data-aos-delay={50}
+                            data-aos-duration={1000}
+                            className="absolute inset-0 bg-cover bg-center z-0 ">
+                            <Image src={channelCover} alt="portfolio" layout="fill" className="object-cover filter blur-[4px] opacity-5 transform scale-115"/>
                         </div>
 
                         <div className="relative z-10 py-24 lg:py-36">
