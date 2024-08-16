@@ -1,4 +1,3 @@
-'use server';
 import {getPostsList} from "@/libs/posts";
 import {PostsGrid} from "@/components/HeroBlog/PostsGrid";
 

@@ -1,4 +1,3 @@
-'use server';
 import {getVideosByPlaylist} from "@/libs/yt/yt.repository";
 import config from "@/libs/config";
 import Image from "next/image";

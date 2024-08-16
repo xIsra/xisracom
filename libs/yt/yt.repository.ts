@@ -1,4 +1,3 @@
-'use server';
 import {unstable_cache as cache} from 'next/cache'
 import {PlaylistItemResponse} from './playlist-item.response';
 import config from "@/libs/config";
