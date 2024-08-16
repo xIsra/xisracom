@@ -85,7 +85,7 @@ export default function SocialLinksList() {
         data-aos-duration="1500"
         data-aos="fade-up"
         className="mt-8 flex">
-        <a href="#" className="text-gray-400 hover:text-gray-500">
+        <a href="https://www.facebook.com/xIsr4" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">Facebook</span>
             <FaFacebook className="h-6 w-6" fill="currentColor"/>
         </a>
