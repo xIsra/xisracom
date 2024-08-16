@@ -1,4 +1,4 @@
-import {unstable_cache as cache} from "next/dist/server/web/spec-extension/unstable-cache";
+import {unstable_cache as cache} from "next/cache";
 import {getPostsList} from "@/libs/posts";
 
 const getPosts = cache(getPostsList, ['posts'], {
