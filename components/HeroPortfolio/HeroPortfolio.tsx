@@ -40,7 +40,7 @@ export function HeroPortfolio() {
                                     </div>
                                 </div>
                                 {[1, 2].map((v) => (
-                                    <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                                    <div key={v} className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
                                         <Image src={"https://placehold.co/600x400?text=?"} alt={"tbd"+v} width={600}
                                                height={400}
                                                className="object-cover w-full h-80"/>
