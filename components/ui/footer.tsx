@@ -1,10 +1,10 @@
 import Logo from "./logo";
-import {SocialLinksList} from "@/components/ui/social-links-list";
+import SocialLinksList from "@/components/ui/SocialLinksList";
 
 export default function Footer({border = false}: { border?: boolean }) {
     return (
         <footer>
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-16">
                 {/* Top area: Blocks */}
                 <div
                     className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12 ${border ? "border-t [border-image:linear-gradient(to_right,transparent,theme(colors.gray.900),transparent)1]" : ""}`}
@@ -12,7 +12,7 @@ export default function Footer({border = false}: { border?: boolean }) {
                     {/* 1st block */}
                     <div className="space-y-2 sm:col-span-12 md:col-span-6">
                         <div>
-                            <Logo/>
+                            <Logo type={'footer'}/>
                         </div>
                         <div className="text-sm text-gray-600">
                             &copy; xisra.com - All rights reserved.

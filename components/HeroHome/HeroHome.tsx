@@ -3,7 +3,8 @@ import {useEffect} from "react";
 import AOS from "aos";
 import Image from "next/image";
 import me from './me-cut-transparent-small.png';
-import {SocialLinksList} from "@/components/ui/social-links-list";
+import SocialLinksList from "@/components/ui/SocialLinksList";
+import FloatingIcons from "@/components/HeroHome/FloatingIcons";
 
 
 export function HeroHome() {
@@ -17,30 +18,32 @@ export function HeroHome() {
     });
 
     return (
-        <section id="home" className="relative h-screen">
+        <section id="home" className="relative h-screen relative  overflow-hidden">
+            <FloatingIcons />
             {/*<PageIllustration />*/}
             {/*<img src={'/images/algae/algae-pool.jpg'} alt="algae pool"*/}
             {/*     className="absolute inset-0 object-cover w-full h-full opacity-40 filter blur-[4px]"/>*/}
             <div className="mx-auto max-w-7xl h-full flex flex-col justify-center">
                 {/* Hero content */}
-                {/*<div className="pb-12 pt-50 md:pb-20 md:pt-40">*/}
-                <div className="">
+                <div className="pb-12 pt-50 px-8 md:pb-24 md:pt-36">
+                    {/*<div className="">*/}
                     {/* Section header */}
                     <div className="pb-12 text-center md:pb-16">
                         {/* avatar image*/}
                         <div
                             data-aos="zoom-y-out"
                             data-aos-delay={200}
-                            className="mx-auto max-w-80 h-80 mb-5 rounded-full overflow-hidden border-4 border-white shadow-lg bg-red-400">
+                            className="mx-auto w-64 h-64 md:w-96 md:h-96 mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg bg-gradient-to-br from-secondary-400 to-primary-400">
                             <Image
                                 data-aos="zoom-y-out"
                                 data-aos-delay={300}
                                 src={me}
                                 alt="avatar"
+                                className={''}
                             />
                         </div>
                         <h1
-                            className="mb-6 text-6xl font-lexend font-extralight"
+                            className=" text-6xl font-lexend font-extralight"
                             data-aos="zoom-y-out"
                             data-aos-delay={150}
                         >
@@ -62,7 +65,7 @@ export function HeroHome() {
                             <div
                                 className="relative before:absolute before:inset-0 before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
                                 <div
-                                    className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center sm:gap-2"
+                                    className="mx-auto max-w-md flex sm:flex sm:max-w-none sm:justify-center gap-4"
                                     data-aos="zoom-y-out"
                                     data-aos-delay={450}
                                 >
@@ -73,17 +76,18 @@ export function HeroHome() {
                                         Check my stuff
                                     </a>
                                     <a
-                                        className="btn group text-xl font-extralight w-full bg-red-400 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
+                                        className="btn group text-xl font-extralight w-full bg-[length:100%_100%] bg-[bottom] text-red-400 hover:text-gray-100 shadow hover:bg-red-400 hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
                                         href='#contact'
                                     >
-                                            <span
-                                                className="ml-1 tracking-normal text-red-50 transition-transform group-hover:translate-x-0.5">
+                                        Contact me
+                                        <span
+                                            className="ml-1 tracking-normal transition-transform group-hover:translate-x-0.5">
                         -&gt;
                       </span>
                                     </a>
                                 </div>
                             </div>
-                            <div className="flex justify-center mt-8">
+                            <div className="flex justify-center mt-8 gap-4">
                                 <SocialLinksList/>
                             </div>
                         </div>
@@ -94,3 +98,5 @@ export function HeroHome() {
         </section>
     );
 }
+
+

@@ -6,18 +6,45 @@ export function HeroContact() {
         <section id="contact" className="relative min-h-screen bg-gray-900">
             <div className="mx-auto max-w-4xl h-full flex flex-col justify-center">
                 {/* Hero content */}
-                <div className="pb-12 pt-50 md:pb-20 md:pt-40">
+                <div className="py-24 md:py-32">
                     {/* Section header */}
-                    <div className="pb-12 text-center md:pb-16">
-                        <h2 className="mb-6 text-6xl font-lexend font-extralight">
+                    <div className="text-center">
+                        <h2
+                            data-aos="fade-down"
+                            data-aos-delay={50}
+                            className="mb-6 text-6xl font-lexend font-extralight">
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             Contact me
                         </h2>
-                        <p className="text-xl text-gray-600">
+                        <p
+                            data-aos="fade-down"
+                            data-aos-delay={500}
+                            className="text-xl text-gray-600 mb-6">
                             Im always happy to chat about new projects, ideas, or anything else.
                         </p>
-                        <form>
-                            <div className="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-2">
+                        <form method={'post'} onSubmit={
+                            async (e) => {
+                                e.preventDefault();
+                                const formData = new FormData(e.target as HTMLFormElement);
+                                const response = await fetch('/api/contact', {
+                                    method: 'POST',
+                                    body: JSON.stringify(Object.fromEntries(formData)),
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                });
+                                if (response.ok) {
+                                    alert('Message sent!');
+                                } else {
+                                    alert('Failed to send message');
+                                }
+                            }
+                        }
+
+                              data-aos="fade-down"
+                              data-aos-delay={1500}
+                        >
+                            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 px-4 lg:px-0">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-red-400">
                                         Name
@@ -73,7 +100,7 @@ export function HeroContact() {
                                 <div className="sm:col-span-2">
                                     <button
                                         type={"submit"}
-                                        className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-400 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:text-sm"
+                                        className="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-400 hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:text-sm "
                                     >
                                         Send message
                                     </button>

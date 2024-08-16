@@ -80,7 +80,22 @@ const config: Config = {
                 "6xl": ["4rem", {lineHeight: "1", letterSpacing: "-0.037em"}],
                 "7xl": ["4.5rem", {lineHeight: "1", letterSpacing: "-0.037em"}],
             },
+            animation: {
+                moveIcon: 'moveIcon linear infinite', // Infinite linear animation
+                floatIcon: 'floatIcon infinite', // Continuous animation
+            },
             keyframes: {
+                moveIcon: {
+                    '0%, 100%': {transform: 'translate(-50%, -50%)'},
+                    '50%': {transform: 'translate(calc(-50% + 2rem), calc(-50% + 2rem))'}, // Slight movement
+                },
+                floatIcon: {
+                    '0%': { transform: 'translate(0, 0)' },
+                    '25%': { transform: 'translate(10px, -15px)' },
+                    '50%': { transform: 'translate(-10px, 10px)' },
+                    '75%': { transform: 'translate(15px, 5px)' },
+                    '100%': { transform: 'translate(0, 0)' },
+                },
                 "code-1": {
                     "0%": {opacity: '0'},
                     "2.5%": {opacity: '1'},

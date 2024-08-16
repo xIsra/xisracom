@@ -1,9 +1,7 @@
 import Hero from "@/components/HeroHome";
 import HeroPortfolio from "@/components/HeroPortfolio";
-import {HeroContact} from "../components/HeroContact/HeroContact";
-import fs from "fs";
-import {getVideosByPlaylist} from "@/libs/yt/yt.repository";
-import config from "@/libs/config";
+import HeroContact from "../components/HeroContact";
+import HeroBlog from "../components/HeroBlog";
 
 export const metadata = {
     icons: {
@@ -38,7 +36,8 @@ export default function Home() {
         <>
             <Hero/>
             <HeroPortfolio/>
-            <HeroContact />
+            <HeroBlog/>
+            <HeroContact/>
         </>
     );
 }
