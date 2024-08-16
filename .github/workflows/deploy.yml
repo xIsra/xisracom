@@ -28,9 +28,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,6 +74,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
