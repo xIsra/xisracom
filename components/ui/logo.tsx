@@ -1,4 +1,3 @@
-'use client';
 import Link from "next/link";
 import AwesomeBox from "@/components/ui/AwesomeBox";
 import {getRandomGoodbyes, getRandomGreetings} from "@/libs/greetings";
@@ -16,16 +15,6 @@ export default function Logo({type = 'default'}) {
             return getRandomGreetings()
         if (type === 'footer') return getRandomGoodbyes()
     }, [type]);
-
-    // const [secondary, setSecondary] = useState(getSecondary())
-
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setSecondary(getSecondary());
-    //     }, 10000);
-    //
-    //     return () => clearInterval(interval);
-    // }, [getSecondary]);
 
     return (
         <Link href="/" className="inline-flex" aria-label="xisracom" data-aos="fade-right">
