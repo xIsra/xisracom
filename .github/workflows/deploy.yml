@@ -66,8 +66,8 @@ jobs:
 
       - name: Build with Next.js
         env:
-          YOUTUBE_API_KEY: ${{ env.YOUTUBE_PLAYLIST_ID }}
-          YOUTUBE_PLAYLIST_ID: ${{ env.YOUTUBE_PLAYLIST_ID }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_API_KEY }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
