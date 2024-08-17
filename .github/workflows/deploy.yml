@@ -63,7 +63,7 @@ jobs:
       - name: Debug Environment Variables
         run: echo "X_DATA=$X_DATA"
         env:
-          X_DATA: ${{ variables.X_DATA }}
+          X_DATA: ${{ vars.X_DATA }}
 
 
       - name: Build with Next.js
