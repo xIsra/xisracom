@@ -3,6 +3,10 @@ import createMDX from '@next/mdx'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
+    YOUTUBE_PLAYLIST_ID: process.env.YOUTUBE_PLAYLIST_ID,
+  },
   /**
    * Enable static exports for the App Router.
    *
