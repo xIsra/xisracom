@@ -18,11 +18,11 @@ export function HeroHome() {
     });
 
     return (
-        <section id="home" className="relative h-screen relative  overflow-hidden">
+        <section id="home" className="relative min-h-screen  overflow-hidden">
             <FloatingIcons />
             <div className="mx-auto max-w-7xl h-full flex flex-col justify-center">
                 {/* Hero content */}
-                <div className="pb-12 pt-50 px-8 md:pb-24 md:pt-36">
+                <div className="pb-12 pt-36 px-8 md:pb-24 md:pt-36">
                     {/* Section header */}
                     <div className="pb-12 text-center md:pb-16">
                         {/* avatar image*/}
