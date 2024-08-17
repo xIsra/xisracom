@@ -27,6 +27,10 @@ async function _getVideosByPlaylist(playlistId: string): Promise<PlaylistItemRes
 
     const data = await playlistResponse.json();
 
+    if(!playlistResponse.ok){
+        throw new Error(data.error.message);
+    }
+
     // fs.writeFileSync('playlist.json', JSON.stringify({
     //     expiration: Date.now() + 24 * 60 * 60 * 1000,
     //     items: data.items,
