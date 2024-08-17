@@ -11,7 +11,7 @@ export function HeroPortfolio() {
                 {/* Hero content */}
                 <div className="py-24 md:py-32">
                     {/* Section header */}
-                    <div className="pb-12 md:pb-16 text-center">
+                    <div className="pb-12 md:pb-16 text-center px-4 md:px-0">
                         <h2
                             data-aos="fade-down"
                             data-aos-delay={50}
