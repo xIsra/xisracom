@@ -41,7 +41,7 @@ export const viewport: Viewport = {
 export const metadata = {
   title: {
     template: 'xIsra - %s',
-    default: 'xIsra.com',
+    default: 'xIsra',
   },
   description:
     "I'm Israel Kouperman, a software engineer, designer, and adventurer. I'm passionate about creating software, designing experiences, and exploring the world.",

@@ -5,6 +5,7 @@ import HeroBlog from '../components/HeroBlog';
 import React from 'react';
 
 export const metadata = {
+  title: `xIsra - Personal website, portfolio, and blog.`,
   icons: {
     icon: '/favicon.ico', // Default favicon
     shortcut: '/favicon-16x16.png', // Shortcut icon (optional)
