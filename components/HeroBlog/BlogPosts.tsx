@@ -1,10 +1,12 @@
-import {getPostsList} from "@/libs/posts";
-import {PostsGrid} from "@/components/HeroBlog/PostsGrid";
+import { getPostsList } from '@/libs/posts';
+import { PostsGrid } from '@/components/HeroBlog/PostsGrid';
 
 export async function BlogPosts() {
-    const posts = await getPostsList();
+  const posts = await getPostsList();
 
-    return <div className="container mx-auto max-w-6xl mb-32">
-        <PostsGrid posts={posts}/>
-    </div>;
+  return (
+    <div className='container mx-auto mb-32 max-w-6xl'>
+      <PostsGrid posts={posts} />
+    </div>
+  );
 }

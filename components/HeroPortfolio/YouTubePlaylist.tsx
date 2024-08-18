@@ -1,61 +1,79 @@
-import {getVideosByPlaylist} from "@/libs/yt/yt.repository";
-import config from "@/libs/config";
-import Image from "next/image";
+import { getVideosByPlaylist } from '@/libs/yt/yt.repository';
+import config from '@/libs/config';
+import Image from 'next/image';
+import { FaVideo } from 'react-icons/fa';
 
 export async function YouTubePlaylist() {
-    const playlistItems = await getVideosByPlaylist(config.yt.playlistId!);
+  const playlistItems = await getVideosByPlaylist(config.yt.playlistId!);
 
-    return <div
-        data-aos="fade-down"
-        data-aos-delay={500}
-        className="relative overflow-x-auto p-8">
-        <div className="transform">
-            <div className="flex flex-row gap-4 flex-nowrap">
-                {playlistItems.map((item) => {
-                    const thumbnailSrc =
-                        item.snippet.thumbnails?.['maxres']?.url ||
-                        item.snippet.thumbnails?.['high']?.url ||
-                        item.snippet.thumbnails?.['standard']?.url;
+  return (
+    <div
+      data-aos='fade-down'
+      data-aos-delay={500}
+      className='mx-auto max-w-7xl p-8'
+    >
+      <div className='mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3'>
+        {playlistItems.slice(0, 3).map((item) => {
+          const thumbnailSrc =
+            item.snippet.thumbnails?.['maxres']?.url ||
+            item.snippet.thumbnails?.['high']?.url ||
+            item.snippet.thumbnails?.['standard']?.url;
 
-                    const title = item.snippet.title;
+          const title = item.snippet.title;
 
-                    return (
-                        <div key={title} className="p-2 bg-gray-900 rounded-lg shadow-lg overflow-hidden hover:transform hover:scale-105 transition-transform"
-                             style={{flex: '1 0 38rem'}}>
-                            <Image src={thumbnailSrc} alt={title} width={1280} height={720}
-                                   className="object-cover w-full h-80 rounded-lg"/>
-                            <div className="p-4">
-                                <h3 className="text-xl font-semibold">{title}</h3>
-                                <p className="text-gray-700"></p>
-                            </div>
-                        </div>
-                    );
-                })}
-                {/*<div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">*/}
-                {/*    <img src="/demo/code1.jpg" alt="awesome"*/}
-                {/*         className="object-cover w-full h-80"/>*/}
-                {/*    <div className="p-4">*/}
-                {/*        <h3 className="text-xl font-semibold">Awesome</h3>*/}
-                {/*        <p className="text-gray-700">This is a description of the project</p>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-                {/*<div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">*/}
-                {/*    <img src="/demo/code1.jpg" alt="awesome"*/}
-                {/*         className="object-cover w-full h-80"/>*/}
-                {/*    <div className="p-4">*/}
-                {/*        <h3 className="text-xl font-semibold">Awesome</h3>*/}
-                {/*        <p className="text-gray-700">This is a description of the project</p>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-                {/*<div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden">*/}
-                {/*    <img src="/demo/code1.jpg" alt="awesome"*/}
-                {/*         className="object-cover w-full h-80"/>*/}
-                {/*    <div className="p-4">*/}
-                {/*        <h3 className="text-xl font-semibold">Awesome</h3>*/}
-                {/*        <p className="text-gray-700">This is a description of the project</p>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
+          return (
+            <div
+              key={title}
+              className='overflow-hidden rounded-lg bg-gray-900 p-2 shadow-xl transition-transform hover:scale-105 hover:transform'
+            >
+              <Image
+                src={thumbnailSrc}
+                alt={title}
+                width={1280}
+                height={720}
+                className='h-48 w-full rounded-lg object-cover sm:h-36 md:h-48 lg:h-64'
+              />
+              <div className='p-4'>
+                <h3 className='text-md font-semibold md:text-lg'>{title}</h3>
+              </div>
             </div>
-        </div>
-    </div>;
+          );
+        })}
+      </div>
+      <div className={'sm:grid-col-3 grid gap-4 md:grid-cols-6'}>
+        {playlistItems.slice(3).map((item) => {
+          const thumbnailSrc =
+            item.snippet.thumbnails?.['maxres']?.url ||
+            item.snippet.thumbnails?.['high']?.url ||
+            item.snippet.thumbnails?.['standard']?.url;
+
+          const title = item.snippet.title;
+
+          return (
+            <div
+              key={title}
+              className='overflow-hidden rounded-lg bg-gray-900 shadow-xl transition-transform hover:scale-105 hover:transform'
+            >
+              <Image
+                src={thumbnailSrc}
+                alt={title}
+                width={1280}
+                height={720}
+                className='h-auto w-full rounded-lg object-cover'
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className='mt-8 flex justify-center'>
+        <a
+          href={`https://youtube.com/@israkouper`}
+          className='btn w-full bg-red-50 text-xl font-extralight text-gray-800 shadow hover:bg-red-100 sm:w-auto'
+        >
+          Check out more &nbsp;
+          <FaVideo className={'text-red-400'} />
+        </a>
+      </div>
+    </div>
+  );
 }

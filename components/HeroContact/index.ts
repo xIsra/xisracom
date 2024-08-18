@@ -1,1 +1,1 @@
-export {HeroContact as default} from './HeroContact'
+export { HeroContact as default } from './HeroContact';

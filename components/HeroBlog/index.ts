@@ -1,1 +1,1 @@
-export {HeroBlog as default} from './HeroBlog'
+export { HeroBlog as default } from './HeroBlog';

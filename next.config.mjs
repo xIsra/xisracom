@@ -1,5 +1,4 @@
-import createMDX from '@next/mdx'
-
+import createMDX from '@next/mdx';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,7 +11,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
-  output: "export",
+  output: 'export',
 
   /**
    * Set base path. This is usually the slug of your repository.
@@ -37,6 +36,6 @@ const nextConfig = {
 
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
-})
+});
 
 export default withMDX(nextConfig);

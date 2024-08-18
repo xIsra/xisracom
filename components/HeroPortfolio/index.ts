@@ -1,1 +1,1 @@
-export {HeroPortfolio as default} from './HeroPortfolio'
+export { HeroPortfolio as default } from './HeroPortfolio';
