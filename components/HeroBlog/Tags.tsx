@@ -1,5 +1,6 @@
 import { unstable_cache as cache } from 'next/cache';
 import { getPostsList } from '@/libs/posts';
+import { Tag } from '@/components/HeroBlog/Tag';
 
 const getPosts = cache(getPostsList, ['posts'], {
   revalidate: 60 * 60 * 24,
@@ -20,17 +21,9 @@ export async function Tags() {
 
   return (
     <div className='container mx-auto mb-32 max-w-6xl'>
-      <div className='flex flex-wrap justify-center'>
+      <div className='flex flex-wrap justify-center gap-2'>
         {keywordsList.map((keyword) => (
-          <a
-            key={keyword}
-            data-aos='fade-up'
-            data-aos-delay={100}
-            href={`/blog/tag/${keyword}`}
-            className='m-2 rounded-md bg-gray-800 px-4 py-2 text-white'
-          >
-            {keyword}
-          </a>
+          <Tag key={keyword} keyword={keyword} />
         ))}
       </div>
     </div>

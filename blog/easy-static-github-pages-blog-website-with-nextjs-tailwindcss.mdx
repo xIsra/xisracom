@@ -1,0 +1,152 @@
+---
+title: Easy Static GitHub Pages Blog Website with Next.js & Tailwind CSS
+description: How I created this blog website using Next.js and Tailwind CSS and deployed it to GitHub Pages.
+keywords: [webdev, nextjs, tailwindcss, github-pages, static website, deployment]
+imageUrl: /assets/blog/easy-static-github-pages-blog-website-with-nextjs-tailwindcss.jpg
+createdAt: 2024-08-24 22:30:00
+status: DRAFT
+---
+
+## Step 1: Setting Up the Project
+
+First, I created a new Next.js project with Tailwind CSS:
+
+```bash
+npx create-next-app@latest my-website
+cd my-website
+```
+
+I selected the following options during the setup:
+
+TypeScript: Yes
+ESLint: Yes
+Tailwind CSS: Yes
+src/ directory: No
+App Router: Yes
+Import alias: No
+
+## Step 2: Installing AOS
+
+To add smooth animations, I installed AOS (Animate On Scroll):
+
+```bash
+npm install aos
+```
+
+## Step 3: Configuring AOS
+
+In the `_app.js` file, I imported and initialized AOS:
+
+```jsx
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    });
+  }, []);
+
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+
+## Step 4: Developing the Website
+
+I created the necessary components and pages, utilizing Next.js's file-based routing system. I used Tailwind CSS for styling and AOS for animations.
+
+Example component with AOS:
+
+```jsx
+<div data-aos="fade-up">
+  <h1 className="text-4xl font-bold">Welcome to My Website</h1>
+</div>
+```
+
+## Step 5: Preparing for Deployment
+
+To deploy to GitHub Pages, I created a `next.config.js` file:
+
+```javascript
+module.exports = {
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+};
+```
+
+I also added a `.nojekyll` file in the `public` folder to prevent GitHub Pages from processing the files with Jekyll.
+
+## Step 6: Creating a GitHub Repository
+
+I created a new repository on GitHub and pushed my local project to it:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/username/my-website.git
+git push -u origin main
+```
+
+## Step 7: Configuring GitHub Actions
+
+I created a `.github/workflows/deploy.yml` file for automatic deployments:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run export
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+```
+
+## Step 8: Enabling GitHub Pages
+
+In the GitHub repository settings, I set the GitHub Pages source to the `gh-pages` branch.
+
+## Step 9: Setting Up a Custom Domain
+
+I purchased a domain and added it to the GitHub Pages settings.
+
+## Step 10: Configuring Cloudflare
+
+1. I created a Cloudflare account and added my domain.
+2. I updated my domain's nameservers to Cloudflare's.
+3. In Cloudflare's DNS settings, I added:
+- An `A` record pointing to GitHub Pages' IP addresses.
+- A `CNAME` record for the `www` subdomain.
+
+## Step 11: Enabling HTTPS
+
+In Cloudflare, I turned on the "Always use HTTPS" option to ensure secure connections.
+
+## Conclusion
+
+With these steps, I successfully created a modern, animated website using Next.js, Tailwind CSS, and AOS, deployed it to GitHub Pages, and set up a custom domain with Cloudflare. This stack provides a great balance of performance, ease of development, and cost-effectiveness for personal websites and small projects.
+
+I hope this guide helps you create your own static blog website or portfolio. Happy coding! 🚀

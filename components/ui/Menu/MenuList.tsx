@@ -5,7 +5,7 @@ export function MenuList({ className = '' }) {
     <ul className={`hidden items-center gap-1 md:flex ${className}`}>
       <li>
         <Link
-          href='#home'
+          href='/'
           className='btn shadow-none hover:bg-red-400 hover:drop-shadow-lg'
         >
           Home

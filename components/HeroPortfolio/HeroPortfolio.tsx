@@ -22,19 +22,19 @@ export function HeroPortfolio() {
             </h2>
             <p
               data-aos='fade-down'
-              data-aos-delay={200}
+              data-aos-delay={150}
               className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'
             >
               {/* eslint-disable-next-line react/no-unescaped-entities */}I have
               a lot of projects that I've worked on. Here are some of them.
             </p>
-            <div
-              data-aos='fade-down'
-              data-aos-delay={500}
-              className='container mx-auto max-w-6xl'
-            >
+            <div className='container mx-auto max-w-6xl'>
               <div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-                <div className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'>
+                <div
+                  className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'
+                  data-aos='fade-down'
+                  data-aos-delay={300}
+                >
                   <Image
                     src={navigation}
                     alt='action-map'
@@ -51,6 +51,8 @@ export function HeroPortfolio() {
                   <div
                     key={v}
                     className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'
+                    data-aos='fade-down'
+                    data-aos-delay={300 + v * 300}
                   >
                     <Image
                       src={'https://placehold.co/600x400?text=?'}

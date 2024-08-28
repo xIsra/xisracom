@@ -3,13 +3,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-
-import MdxLayout from '@/app/blog/layout';
 import { useMDXComponents } from '@/mdx-components';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getPostBySlug } from '@/libs/posts';
+import { getPostBySlug, PostMetadata } from '@/libs/posts';
 import React from 'react';
+import { Tag } from '@/components/HeroBlog/Tag';
+import ArticleLayout from '@/components/Article/ArticleLayout';
 
 export async function generateStaticParams() {
   const posts = fs.readdirSync('blog');
@@ -29,8 +29,11 @@ export async function generateMetadata({
   const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
   const { data } = matter(markdownWithMeta);
 
+  const post = data as PostMetadata;
+
   return {
     title: data.title,
+    description: post.description,
     keywords: data.keywords,
   };
 }
@@ -50,15 +53,28 @@ export default async function BlogPost({
   }
 
   return (
-    <MdxLayout>
+    <>
       <Image
         src={post.data.imageUrl}
         width={1280}
         height={720}
         alt={post.data.slug}
-        className={'h-80 w-auto rounded-lg'}
+        className={'mb-10 mt-24 h-80 w-auto rounded-lg'}
       />
-      <MDXRemote source={post.content} components={components} />
-    </MdxLayout>
+
+      <h1 className={'mb-2 text-5xl font-extralight'}>{post.data.title}</h1>
+      <h6
+        className={'mb-2 font-bold'}
+      >{`${new Date(post.data.createdAt).toDateString()}`}</h6>
+
+      <div className='mb-12 flex w-full flex-wrap gap-1'>
+        {post.data.keywords.map((keyword, index) => (
+          <Tag key={index} keyword={keyword} />
+        ))}
+      </div>
+      <ArticleLayout>
+        <MDXRemote source={post.content} components={components} />
+      </ArticleLayout>
+    </>
   );
 }

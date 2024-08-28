@@ -9,6 +9,8 @@ export type PostMetadata = {
   keywords: string[];
   videoUrl: string;
   imageUrl: string;
+  createdAt: string;
+  status?: 'DRAFT' | 'PUBLISHED';
 };
 
 export async function getPostsList() {
@@ -19,7 +21,8 @@ export async function getPostsList() {
       const slug = post.replace(/\.mdx$/, '');
       return getPostBySlug(slug)?.data;
     })
-    .filter((post): post is PostMetadata => post !== null);
+    .filter((post): post is PostMetadata => post !== null)
+    .filter((post) => post?.status === 'PUBLISHED');
 }
 
 export function getPostBySlug(slug: string): {
@@ -36,6 +39,8 @@ export function getPostBySlug(slug: string): {
     data: {
       title: data.title,
       slug,
+      status: data.status,
+      createdAt: data.createdAt,
       description: data.description,
       keywords: data.keywords,
       imageUrl: data.imageUrl,

@@ -18,7 +18,7 @@ export function HeroContact() {
             </h2>
             <p
               data-aos='fade-down'
-              data-aos-delay={500}
+              data-aos-delay={150}
               className='mb-6 text-xl text-gray-600'
             >
               Im always happy to chat about new projects, ideas, or anything
@@ -43,7 +43,7 @@ export function HeroContact() {
                 }
               }}
               data-aos='fade-down'
-              data-aos-delay={1500}
+              data-aos-delay={300}
             >
               <div className='grid grid-cols-1 gap-6 px-4 sm:grid-cols-2 lg:px-0'>
                 <div>
