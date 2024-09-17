@@ -69,7 +69,6 @@ export default function FloatingIcons() {
         return (
           <IconComponent
             key={index}
-            data-aos-delay={200}
             className={`fixed z-[-5] text-red-400 opacity-15 ${Math.random() > 0.5 ? 'animate-moveIcon' : 'animate-floatIcon'} ${getRandomBlurClassName()}`}
             style={{
               top: `${pos.top + 10}%`,

@@ -87,6 +87,7 @@ export function HeroPortfolio() {
                 alt='portfolio'
                 layout='fill'
                 className='scale-115 transform object-cover opacity-5 blur-[4px] filter'
+                loading='lazy'
               />
             </div>
 

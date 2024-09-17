@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import me from './me-cut-transparent-small.png';
 import SocialLinksList from '@/components/ui/SocialLinksList';
-import FloatingIcons from '@/components/HeroHome/FloatingIcons';
+// import FloatingIcons from '@/components/HeroHome/FloatingIcons';
+import { lazy } from 'react';
+
+const FloatingIcons = lazy(() => import('@/components/HeroHome/FloatingIcons'));
 
 export function HeroHome() {
   return (
@@ -24,6 +27,7 @@ export function HeroHome() {
                 src={me}
                 alt='avatar'
                 className={''}
+                loading='lazy'
               />
             </div>
             <h1

@@ -3,8 +3,6 @@ import Image from 'next/image';
 import {
   BiChevronLeft,
   BiChevronRight,
-  BiLeftArrow,
-  BiRightArrow,
 } from 'react-icons/bi';
 
 export function PostsGrid({ posts }: { posts: PostMetadata[] }) {
@@ -25,6 +23,7 @@ export function PostsGrid({ posts }: { posts: PostMetadata[] }) {
               width={600}
               height={400}
               className='h-80 w-full rounded-lg object-cover'
+              loading='lazy'
             />
           </a>
           <div className='p-4'>
