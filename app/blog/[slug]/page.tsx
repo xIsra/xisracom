@@ -35,6 +35,24 @@ export async function generateMetadata({
     title: data.title,
     description: post.description,
     keywords: data.keywords,
+    openGraph: {
+      title: data.title,
+      description: post.description,
+      url: `https://xisra.com/blog/${params.slug}`,
+      type: 'article',
+      // authors: [post.author],
+      tags: post.keywords,
+      publishedTime: post.createdAt,
+      modifiedTime: post.createdAt,
+      images: [
+        {
+          url: process.env.NODE_ENV === 'production'? `https://xisra.com${post.imageUrl}`: post.imageUrl,
+          width: 1280,
+          height: 720,
+          alt: post.title,
+        },
+      ],
+    }
   };
 }
 
