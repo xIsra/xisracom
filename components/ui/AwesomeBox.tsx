@@ -26,7 +26,7 @@ export default function AwesomeBox({
       {secondary && (
         <div
           className={
-            'absolute left-3/4 top-2/4 -rotate-12 whitespace-nowrap font-yesteryear text-2xl font-light text-white'
+            'absolute left-3/4 top-2/4 -rotate-12 whitespace-nowrap font-yesteryear text-2xl font-light text-white transform transition-transform delay-150'
           }
           style={{
             textShadow: '1px 1px 0px rgba(0, 0, 0, 1)',

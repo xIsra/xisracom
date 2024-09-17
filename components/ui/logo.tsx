@@ -10,10 +10,10 @@ export const backgroundAwesomeStyles = {
 
 export default function Logo({ type = 'default' }) {
   return (
-    <Link href='/' className='inline-flex' aria-label='xisracom'>
+    <Link href='/' className='inline-flex transform transition-transform delay-150 hover:rotate-2 hover:scale-105' aria-label='xisracom'>
       <AwesomeBox
-        primary={'xisra.com'}
-        secondary={<LogoSecondaryText type={type} />}
+      primary={'xisra.com'}
+      secondary={<LogoSecondaryText type={type} />}
       />
     </Link>
   );
