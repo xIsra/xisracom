@@ -2,14 +2,6 @@
 import { FaEnvelope } from 'react-icons/fa';
 
 export function HeroContact() {
-  function sendEmail() {
-    const name = document.getElementById('name')?.value;
-    const email = document.getElementById('email')?.value;
-    const message = document.getElementById('message')?.value;
-    const mailtoLink = `mailto:youremail@example.com?subject=Message%20from%20${name}&body=${encodeURIComponent(message)}`;
-    window.location.href = mailtoLink;
-  }
-
   return (
     <section id='contact' className='relative min-h-screen bg-gray-900'>
       <div className='mx-auto flex h-full max-w-4xl flex-col justify-center'>
@@ -17,15 +9,11 @@ export function HeroContact() {
         <div className='py-24 md:py-32'>
           {/* Section header */}
           <div className='text-center'>
-            <h2
-              className='mb-6 font-lexend text-6xl font-extralight'
-            >
+            <h2 className='mb-6 font-lexend text-6xl font-extralight'>
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               Contact me
             </h2>
-            <p
-              className='mb-6 text-xl text-gray-600'
-            >
+            <p className='mb-6 text-xl text-gray-600'>
               Im always happy to chat about new projects, ideas, or anything
               else.
             </p>
@@ -42,7 +30,7 @@ export function HeroContact() {
             >
               <div className='grid grid-cols-1 gap-6 px-4 sm:grid-cols-2 lg:px-0'>
                 <div className='sm:col-span-2'>
-                  <div className='flex justify-between mb-2'>
+                  <div className='mb-2 flex justify-between'>
                     <label
                       htmlFor='name'
                       className='block text-sm font-bold text-red-400'
@@ -60,7 +48,7 @@ export function HeroContact() {
                   />
                 </div>
                 <div className='sm:col-span-2'>
-                  <div className='flex justify-between mb-2'>
+                  <div className='mb-2 flex justify-between'>
                     <label
                       htmlFor='subject'
                       className='block text-sm font-bold text-red-400'
@@ -77,7 +65,7 @@ export function HeroContact() {
                   />
                 </div>
                 <div className='sm:col-span-2'>
-                  <div className='flex justify-between mb-2'>
+                  <div className='mb-2 flex justify-between'>
                     <label
                       htmlFor='message'
                       className='block text-sm font-bold text-red-400'
@@ -101,10 +89,10 @@ export function HeroContact() {
                 <div className='sm:col-span-2'>
                   <button
                     type={'submit'}
-                    className='inline-flex w-full items-center justify-center rounded-md border border-transparent bg-red-400 px-6 py-3 text-base font-bold size-24 text-white shadow-sm hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:text-sm '
+                    className='inline-flex size-24 w-full items-center justify-center rounded-md border border-transparent bg-red-400 px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:text-sm'
                   >
                     Send message
-                    <FaEnvelope className='h-6 w-6 mx-2' fill='currentColor' />
+                    <FaEnvelope className='mx-2 h-6 w-6' fill='currentColor' />
                   </button>
                 </div>
               </div>
