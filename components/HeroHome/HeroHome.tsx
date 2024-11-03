@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import me from './me-cut-transparent-small.png';
+import me from './me-cut-transparent-small.webp';
 import SocialLinksList from '@/components/ui/SocialLinksList';
 // import FloatingIcons from '@/components/HeroHome/FloatingIcons';
 import { lazy } from 'react';
