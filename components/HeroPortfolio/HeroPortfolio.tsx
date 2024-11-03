@@ -13,16 +13,12 @@ export function HeroPortfolio() {
           {/* Section header */}
           <div className='px-4 pb-12 text-center md:pb-16'>
             <h2
-              data-aos='fade-down'
-              data-aos-delay={50}
               className='mb-6 font-lexend text-6xl font-extralight'
             >
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               Here's my stuff
             </h2>
             <p
-              data-aos='fade-down'
-              data-aos-delay={150}
               className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'
             >
               {/* eslint-disable-next-line react/no-unescaped-entities */}I have
@@ -32,8 +28,6 @@ export function HeroPortfolio() {
               <div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
                 <div
                   className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'
-                  data-aos='fade-down'
-                  data-aos-delay={300}
                 >
                   <Image
                     src={navigation}
@@ -51,8 +45,6 @@ export function HeroPortfolio() {
                   <div
                     key={v}
                     className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'
-                    data-aos='fade-down'
-                    data-aos-delay={300 + v * 300}
                   >
                     <Image
                       src={'https://placehold.co/600x400?text=?'}
@@ -78,8 +70,6 @@ export function HeroPortfolio() {
           <div className='relative pb-12 text-center'>
             <div
               data-aos={'fade'}
-              data-aos-delay={50}
-              data-aos-duration={1000}
               className='absolute inset-0 z-0 bg-cover bg-center'
             >
               <Image
@@ -93,16 +83,12 @@ export function HeroPortfolio() {
 
             <div className='relative z-10 py-24 lg:py-36'>
               <h2
-                data-aos='fade-down'
-                data-aos-delay={50}
                 className='mb-6 font-lexend text-6xl font-extralight'
               >
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
                 My Youtube channel
               </h2>
               <p
-                data-aos='fade-down'
-                data-aos-delay={200}
                 className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'
               >
                 I have a YouTube channel where I post my adventures.{' '}

@@ -1,26 +1,17 @@
 import React from 'react';
 import './css/style.css';
 
-import { Amatic_SC, Lexend, Yesteryear } from 'next/font/google';
+import { Lexend, Yesteryear } from 'next/font/google';
 
 import Header from '@/components/ui/header';
 import Footer from '@/components/ui/footer';
 import Script from 'next/script';
 import { Viewport } from 'next';
-import { AnimateOnScrollLoader } from '@/component/AnimateOnScrollLoader';
 
 const lexend = Lexend({
   subsets: ['latin'],
   variable: '--font-lexend',
   display: 'swap',
-});
-
-const amatic = Amatic_SC({
-  subsets: ['latin', 'hebrew'],
-  variable: '--font-amatic',
-  display: 'swap',
-  style: 'normal',
-  weight: '700',
 });
 
 const yesteryear = Yesteryear({
@@ -97,9 +88,9 @@ export default function RootLayout({
   return (
     <html lang='en' className={`scroll-smooth`}>
       <body
-        className={`${lexend.variable} ${amatic.variable} ${yesteryear.variable} bg-gray-950 font-lexend tracking-tight text-gray-100 antialiased`}
+        className={`${lexend.variable} ${yesteryear.variable} bg-gray-950 font-lexend tracking-tight text-gray-100 antialiased`}
       >
-        <AnimateOnScrollLoader />
+        {/* <AnimateOnScrollLoader /> */}
         <div className='flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip'>
           <Header />
 

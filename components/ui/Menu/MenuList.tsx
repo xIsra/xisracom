@@ -1,14 +1,20 @@
 import Link from 'next/link';
-import { FaBlog, FaDrawPolygon, FaEnvelopeOpen, FaHome, FaNewspaper } from 'react-icons/fa';
+import {
+  FaBlog,
+  FaDrawPolygon,
+  FaEnvelopeOpen,
+  FaHome,
+  FaNewspaper,
+} from 'react-icons/fa';
 import { FaC } from 'react-icons/fa6';
 
 export function MenuList({ className = '' }) {
   return (
-    <ul className={`hidden items-center gap-1 md:flex ${className}`}>
+    <ul className={`items-center gap-1 md:flex ${className}`}>
       <li>
         <Link
           href='/'
-          className='btn shadow-none hover:bg-red-400 hover:drop-shadow-lg hover:text-gray-900 hover:scale-110 font-light hover:font-normal'
+          className='btn w-full px-4 py-10 font-light shadow-none hover:scale-110 hover:bg-red-400 hover:font-normal hover:text-gray-900 hover:drop-shadow-lg md:px-8 md:py-4 lg:px-10'
         >
           <FaHome className='mr-1' />
           Home
@@ -17,7 +23,7 @@ export function MenuList({ className = '' }) {
       <li>
         <Link
           href='/#portfolio'
-          className='btn shadow-none hover:bg-red-400 hover:drop-shadow-lg hover:text-gray-900 hover:scale-110 font-light hover:font-normal'
+          className='btn w-full px-4 py-10 font-light shadow-none hover:scale-110 hover:bg-red-400 hover:font-normal hover:text-gray-900 hover:drop-shadow-lg md:px-8 md:py-4 lg:px-10'
         >
           <FaDrawPolygon className='mr-1' />
           My Stuff
@@ -26,7 +32,7 @@ export function MenuList({ className = '' }) {
       <li>
         <Link
           href='/#blog'
-          className='btn shadow-none hover:bg-red-400 hover:drop-shadow-lg hover:text-gray-900 hover:scale-110 font-light hover:font-normal'
+          className='btn w-full px-4 py-10 font-light shadow-none hover:scale-110 hover:bg-red-400 hover:font-normal hover:text-gray-900 hover:drop-shadow-lg md:px-8 md:py-4 lg:px-10'
         >
           <FaNewspaper className='mr-1' />
           Posts
@@ -35,7 +41,7 @@ export function MenuList({ className = '' }) {
       <li>
         <Link
           href='/#contact'
-          className='btn shadow-none hover:bg-red-400 hover:drop-shadow-lg hover:text-gray-900 hover:scale-110 font-light hover:font-normal'
+          className='btn w-full px-4 py-10 font-light shadow-none hover:scale-110 hover:bg-red-400 hover:font-normal hover:text-gray-900 hover:drop-shadow-lg md:px-8 md:py-4 lg:px-10'
         >
           <FaEnvelopeOpen className='mr-1' />
           Contact

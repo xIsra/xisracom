@@ -1,3 +1,4 @@
+'use client';
 import {
   FaCode,
   FaCss3Alt,
@@ -69,9 +70,9 @@ export default function FloatingIcons() {
         return (
           <IconComponent
             key={index}
-            className={`fixed z-[-5] text-red-400 opacity-15 ${Math.random() > 0.5 ? 'animate-moveIcon' : 'animate-floatIcon'} ${getRandomBlurClassName()}`}
+            className={`fixed z-[-5] text-gray-400 opacity-5 ${Math.random() > 0.5 ? 'animate-moveIcon' : 'animate-floatIcon'} ${getRandomBlurClassName()}`}
             style={{
-              top: `${pos.top + 10}%`,
+              top: `${pos.top + 5}%`,
               left: `${pos.left}%`,
               transform: `translate(-50%, -50%)`,
               fontSize: `${Math.random() * 3 + 1}rem`,

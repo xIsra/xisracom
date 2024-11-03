@@ -10,9 +10,6 @@ import { FaX } from 'react-icons/fa6';
 export default function SocialLinksList() {
   return (
     <div
-      data-aos-easing='ease-in-out'
-      data-aos-duration='1500'
-      data-aos='fade-up'
       className='mt-8 flex'
     >
       <a

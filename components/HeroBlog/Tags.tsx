@@ -20,12 +20,10 @@ export async function Tags() {
   const keywordsList = Array.from(keywords);
 
   return (
-    <div className='container mx-auto mb-32 max-w-6xl'>
-      <div className='flex flex-wrap justify-center gap-2'>
-        {keywordsList.map((keyword) => (
-          <Tag key={keyword} keyword={keyword} />
-        ))}
-      </div>
+    <div className='flex flex-wrap justify-center gap-2'>
+      {keywordsList.map((keyword) => (
+        <Tag key={keyword} keyword={keyword} />
+      ))}
     </div>
   );
 }

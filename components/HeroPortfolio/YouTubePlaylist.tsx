@@ -24,8 +24,6 @@ export async function YouTubePlaylist() {
               key={title}
               href={`https://www.youtube.com/watch?v=${item.contentDetails.videoId}`}
               className='block overflow-hidden rounded-lg bg-gray-900 p-2 shadow-xl transition-transform hover:scale-105 hover:transform'
-              data-aos='fade-down'
-              data-aos-delay={BASE_DELAY + i * BASE_DELAY}
             >
               <Image
                 src={thumbnailSrc}
@@ -62,8 +60,6 @@ export async function YouTubePlaylist() {
               key={title}
               href={`https://www.youtube.com/watch?v=${item.contentDetails.videoId}`}
               className='block overflow-hidden rounded-lg bg-gray-900 shadow-xl transition-transform hover:scale-105 hover:transform'
-              data-aos='fade-down'
-              data-aos-delay={BASE_DELAY + (i + SKIPPED_VIDS) * 100}
             >
               <Image
                 src={thumbnailSrc}
@@ -80,8 +76,6 @@ export async function YouTubePlaylist() {
         <a
           href={`https://youtube.com/@israkouper`}
           className='btn w-full bg-red-50 text-xl font-extralight text-gray-800 shadow hover:bg-red-100 sm:w-auto'
-          data-aos='fade-down'
-          data-aos-delay={BASE_DELAY + (playlistItems.length + 1) * 100}
         >
           Check out more &nbsp;
           <FaVideo className={'text-red-400'} />

@@ -7,7 +7,7 @@ export function AnimateOnScrollLoader() {
     AOS.init({
       once: true,
       disable: 'phone',
-      duration: 700,
+      duration: 300,
       easing: 'ease-out-cubic',
     });
   });

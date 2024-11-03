@@ -1,19 +1,13 @@
 import { PostMetadata } from '@/libs/posts';
 import Image from 'next/image';
-import {
-  BiChevronLeft,
-  BiChevronRight,
-} from 'react-icons/bi';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 export function PostsGrid({ posts }: { posts: PostMetadata[] }) {
   return (
-    <div className='relative mt-8 grid grid-cols-1 justify-start gap-4 sm:grid-cols-3'>
+    <div className='relative mt-8 grid grid-cols-1 justify-start gap-4 md:grid-cols-2 lg:grid-cols-3'>
       {posts.map((post, index) => (
         <div
           key={post.title}
-          data-aos='zoom-y-out'
-          data-aos-delay={300}
-          data-aos-easing='ease-in-out'
           className={`overflow-hidden rounded-lg bg-gray-800 p-2 shadow-lg transition-transform hover:scale-105 hover:transform`}
         >
           <a href={`/blog/${post.slug}`}>

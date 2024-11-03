@@ -59,7 +59,6 @@ const config: Config = {
         // amatic: ["Amatic SC", "sans-serif"],
         // 👇 Add CSS variables
         lexend: ['var(--font-lexend)'],
-        amatic: ['var(--font-amatic)'],
         yesteryear: ['var(--font-yesteryear)'],
       },
       fontSize: {

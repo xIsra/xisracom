@@ -1,6 +1,15 @@
 'use client';
+import { FaEnvelope } from 'react-icons/fa';
 
 export function HeroContact() {
+  function sendEmail() {
+    const name = document.getElementById('name')?.value;
+    const email = document.getElementById('email')?.value;
+    const message = document.getElementById('message')?.value;
+    const mailtoLink = `mailto:youremail@example.com?subject=Message%20from%20${name}&body=${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+  }
+
   return (
     <section id='contact' className='relative min-h-screen bg-gray-900'>
       <div className='mx-auto flex h-full max-w-4xl flex-col justify-center'>
@@ -9,92 +18,69 @@ export function HeroContact() {
           {/* Section header */}
           <div className='text-center'>
             <h2
-              data-aos='fade-down'
-              data-aos-delay={50}
               className='mb-6 font-lexend text-6xl font-extralight'
             >
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               Contact me
             </h2>
             <p
-              data-aos='fade-down'
-              data-aos-delay={150}
               className='mb-6 text-xl text-gray-600'
             >
               Im always happy to chat about new projects, ideas, or anything
               else.
             </p>
             <form
-              method={'post'}
               onSubmit={async (e) => {
                 e.preventDefault();
                 const formData = new FormData(e.target as HTMLFormElement);
-                const response = await fetch('/api/contact', {
-                  method: 'POST',
-                  body: JSON.stringify(Object.fromEntries(formData)),
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                });
-                if (response.ok) {
-                  alert('Message sent!');
-                } else {
-                  alert('Failed to send message');
-                }
+                window.open(
+                  `mailto:me@xisra.com?subject=${formData.get(
+                    'subject'
+                  )}&body=${formData.get('message')}`
+                );
               }}
-              data-aos='fade-down'
-              data-aos-delay={300}
             >
               <div className='grid grid-cols-1 gap-6 px-4 sm:grid-cols-2 lg:px-0'>
-                <div>
-                  <label
-                    htmlFor='name'
-                    className='block text-sm font-medium text-red-400'
-                  >
-                    Name
-                  </label>
+                <div className='sm:col-span-2'>
+                  <div className='flex justify-between mb-2'>
+                    <label
+                      htmlFor='name'
+                      className='block text-sm font-bold text-red-400'
+                    >
+                      Name
+                    </label>
+                  </div>
                   <input
                     type='text'
                     name='name'
                     id='name'
                     autoComplete='name'
-                    className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm'
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor='email'
-                    className='block text-sm font-medium text-red-400'
-                  >
-                    Email
-                  </label>
-                  <input
-                    type='email'
-                    name='email'
-                    id='email'
-                    autoComplete='email'
+                    placeholder='Your name here...'
                     className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm'
                   />
                 </div>
                 <div className='sm:col-span-2'>
-                  <label
-                    htmlFor='subject'
-                    className='block text-sm font-medium text-red-400'
-                  >
-                    Subject
-                  </label>
+                  <div className='flex justify-between mb-2'>
+                    <label
+                      htmlFor='subject'
+                      className='block text-sm font-bold text-red-400'
+                    >
+                      Subject
+                    </label>
+                  </div>
                   <input
                     type='text'
                     name='subject'
                     id='subject'
+                    placeholder='Whats the goal?'
                     className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm'
                   />
                 </div>
                 <div className='sm:col-span-2'>
-                  <div className='flex justify-between'>
+                  <div className='flex justify-between mb-2'>
                     <label
                       htmlFor='message'
-                      className='block text-sm font-medium text-red-400'
+                      className='block text-sm font-bold text-red-400'
                     >
                       Message
                     </label>
@@ -106,16 +92,19 @@ export function HeroContact() {
                     id='message'
                     name='message'
                     rows={4}
+                    maxLength={500}
                     className='mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-pink-500 focus:ring-pink-500 sm:text-sm'
                     aria-describedby='message-max'
+                    placeholder="Let's talk about..."
                   />
                 </div>
                 <div className='sm:col-span-2'>
                   <button
                     type={'submit'}
-                    className='inline-flex w-full items-center justify-center rounded-md border border-transparent bg-red-400 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:text-sm'
+                    className='inline-flex w-full items-center justify-center rounded-md border border-transparent bg-red-400 px-6 py-3 text-base font-bold size-24 text-white shadow-sm hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:text-sm '
                   >
                     Send message
+                    <FaEnvelope className='h-6 w-6 mx-2' fill='currentColor' />
                   </button>
                 </div>
               </div>

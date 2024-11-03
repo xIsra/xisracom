@@ -5,19 +5,19 @@ import { MenuList } from '@/components/ui/Menu/MenuList';
 export function MobileMenu() {
   const [open, setOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [open]);
+  // useEffect(() => {
+  //   if (open) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  // }, [open]);
 
   return (
     <div className='md:hidden'>
       {/* Mobile menu */}
       <button
-        className='block'
+        className='btn btn-icon block'
         aria-label='Open Menu'
         onClick={() => setOpen(!open)}
       >
@@ -41,7 +41,8 @@ export function MobileMenu() {
       <div
         className={`${
           open ? 'block' : 'hidden'
-        } absolute inset-x-0 top-14 z-20 bg-gray-800/80 shadow-lg`}
+        } absolute inset-x-0 top-14 z-20 bg-gray-900/95 shadow-2xl`}
+        onClick={() => setOpen(false)}
       >
         <MenuList />
       </div>
