@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { YouTubePlaylist } from '@/components/HeroPortfolio/YouTubePlaylist';
 import Link from 'next/link';
-import channelCover from './channel-cover.png';
+import channelCover from './channel-cover.webp';
 import navigation from './navigation.jpg';
 
 export function HeroPortfolio() {
@@ -12,23 +12,17 @@ export function HeroPortfolio() {
         <div className='py-24 md:py-32'>
           {/* Section header */}
           <div className='px-4 pb-12 text-center md:pb-16'>
-            <h2
-              className='mb-6 font-lexend text-6xl font-extralight'
-            >
+            <h2 className='mb-6 font-lexend text-6xl font-extralight'>
               {/* eslint-disable-next-line react/no-unescaped-entities */}
               Here's my stuff
             </h2>
-            <p
-              className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'
-            >
+            <p className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'>
               {/* eslint-disable-next-line react/no-unescaped-entities */}I have
               a lot of projects that I've worked on. Here are some of them.
             </p>
             <div className='container mx-auto max-w-6xl'>
               <div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-                <div
-                  className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'
-                >
+                <div className='overflow-hidden rounded-lg bg-gray-900 shadow-lg'>
                   <Image
                     src={navigation}
                     alt='action-map'
@@ -68,13 +62,10 @@ export function HeroPortfolio() {
           </div>
 
           <div className='relative pb-12 text-center'>
-            <div
-              data-aos={'fade'}
-              className='absolute inset-0 z-0 bg-cover bg-center'
-            >
+            <div className='absolute inset-0 z-0 bg-cover bg-center'>
               <Image
                 src={channelCover}
-                alt='portfolio'
+                alt='channel cover'
                 layout='fill'
                 className='scale-115 transform object-cover opacity-5 blur-[4px] filter'
                 loading='lazy'
@@ -82,15 +73,11 @@ export function HeroPortfolio() {
             </div>
 
             <div className='relative z-10 py-24 lg:py-36'>
-              <h2
-                className='mb-6 font-lexend text-6xl font-extralight'
-              >
+              <h2 className='mb-6 font-lexend text-6xl font-extralight'>
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
                 My Youtube channel
               </h2>
-              <p
-                className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'
-              >
+              <p className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'>
                 I have a YouTube channel where I post my adventures.{' '}
                 <Link
                   href={'http://youtube.com/@israkouper'}
