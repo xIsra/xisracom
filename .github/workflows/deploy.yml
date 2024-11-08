@@ -17,7 +17,7 @@ concurrency:
 env:
   YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
   YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
-  HOST: ${{ env.HOST }}
+  HOST: ${{ vars.HOST }}
 
 jobs:
   build:
@@ -69,7 +69,7 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
-          HOST: ${{ env.HOST }}
+          HOST: ${{ vars.HOST }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
