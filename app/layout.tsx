@@ -6,7 +6,7 @@ import { Lexend, Yesteryear } from 'next/font/google';
 import Header from '@/components/ui/header';
 import Footer from '@/components/ui/footer';
 import Script from 'next/script';
-import { Viewport } from 'next';
+import { Metadata, Viewport } from 'next';
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -29,13 +29,13 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
-    template: 'xIsra - %s',
-    default: 'xIsra - Personal website, portfolio, and blog.',
+    template: '%s - xisra',
+    default: 'Israel Kouperman - Dev with attitude',
   },
   description:
-    "I'm Israel Kouperman, a software engineer, designer, and adventurer. I'm passionate about creating software, designing experiences, and exploring the world.",
+    "I'm Isra, a web developer, digital creator, and adventurer. I'm passionate about the web and the whole world.",
   keywords: [
     'xisra',
     'blog',
@@ -49,9 +49,9 @@ export const metadata = {
     'coding',
   ],
   robots: 'index, follow',
-  category: 'personal',
+  category: 'website',
   // colorScheme: 'light dark',
-  // themeColor: '#ec407a',
+  themeColor: '#ec407a',
   icons: {
     icon: '/favicon.ico', // Default favicon
     shortcut: '/favicon-16x16.png', // Shortcut icon (optional)
@@ -74,6 +74,20 @@ export const metadata = {
         url: '/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
+      },
+    ],
+  },
+  openGraph: {
+    siteName: 'xisra.com',
+    title: 'Israel Kouperman - Dev with attitude',
+    description:
+      "I'm Isra, a web developer, digital creator, and adventurer. I'm passionate about the web and the whole world.",
+    type: 'website',
+    url: 'https://xisra.com',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
       },
     ],
   },
