@@ -27,6 +27,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
+  colorScheme: 'dark',
 };
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   category: 'website',
   // colorScheme: 'light dark',
-  themeColor: '#ec407a',
+  // themeColor: '#ec407a',
   icons: {
     icon: (process.env.HOST || '') + '/favicon.ico', // Default favicon
     shortcut: (process.env.HOST || '') + '/favicon-16x16.png', // Shortcut icon (optional)
