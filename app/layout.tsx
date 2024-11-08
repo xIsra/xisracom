@@ -91,6 +91,12 @@ export const metadata: Metadata = {
       {
         url: 'https://xisra.com/og-image.jpg',
         width: 1200,
+        height: 600,
+      },
+      {
+        url: 'https://xisra.com/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
       },
     ],
   },
