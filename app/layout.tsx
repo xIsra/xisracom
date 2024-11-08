@@ -53,25 +53,25 @@ export const metadata: Metadata = {
   // colorScheme: 'light dark',
   themeColor: '#ec407a',
   icons: {
-    icon: process.env.HOST + '/favicon.ico', // Default favicon
-    shortcut: process.env.HOST + '/favicon-16x16.png', // Shortcut icon (optional)
-    apple: process.env.HOST + '/apple-touch-icon.png', // Apple touch icon
+    icon: (process.env.HOST || '') + '/favicon.ico', // Default favicon
+    shortcut: (process.env.HOST || '') + '/favicon-16x16.png', // Shortcut icon (optional)
+    apple: (process.env.HOST || '') + '/apple-touch-icon.png', // Apple touch icon
     other: [
       {
         rel: 'icon',
-        url: process.env.HOST + '/favicon-32x32.png',
+        url: (process.env.HOST || '') + '/favicon-32x32.png',
         sizes: '32x32',
         type: 'image/png',
       },
       {
         rel: 'icon',
-        url: process.env.HOST + '/android-chrome-192x192.png',
+        url: (process.env.HOST || '') + '/android-chrome-192x192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
         rel: 'icon',
-        url: process.env.HOST + '/android-chrome-512x512.png',
+        url: (process.env.HOST || '') + '/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
       },
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     url: 'https://xisra.com',
     images: [
       {
-        url: process.env.HOST + '/og-image.jpg',
+        url: (process.env.HOST || '') + '/og-image.jpg',
         width: 1200,
       },
     ],
