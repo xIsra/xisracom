@@ -78,6 +78,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+  metadataBase: new URL('https://xisra.com'),
   openGraph: {
     siteName: 'xisra.com',
     title: 'Israel Kouperman - Dev with attitude',
@@ -85,6 +86,7 @@ export const metadata: Metadata = {
       "I'm Isra, a web developer, digital creator, and adventurer. I'm passionate about the web and the whole world.",
     type: 'website',
     url: 'https://xisra.com',
+    emails: ['me@xisra.com'],
     images: [
       {
         url: 'https://xisra.com/og-image.jpg',
