@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     url: 'https://xisra.com',
     images: [
       {
-        url: (process.env.HOST || '') + '/og-image.jpg',
+        url: 'https://xisra.com/og-image.jpg',
         width: 1200,
       },
     ],
