@@ -1,6 +1,11 @@
+import { getPostsList } from '@/libs/posts';
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = 'force-static';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPostsList();
+
   return [
     {
       url: 'https://xisra.com',
@@ -26,5 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.5,
     },
+
+    // @ts-ignore
+    ...posts.map((post) => ({
+      url: `https://xisra.com/blog/${post.slug}`,
+      lastModified: new Date(post.createdAt),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    })),
   ];
 }

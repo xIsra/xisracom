@@ -41,12 +41,12 @@ export function PostsGrid({ posts }: { posts: PostMetadata[] }) {
       ))}
       <BiChevronLeft
         className={
-          'absolute -left-28 top-[50%] rounded-full text-5xl transition-all hover:bg-red-400'
+          'hidden absolute -left-28 top-[50%] rounded-full text-5xl transition-all hover:bg-red-400'
         }
       />
       <BiChevronRight
         className={
-          'absolute -right-28 top-[50%] rounded-full text-5xl transition-all hover:bg-red-400'
+          'hidden absolute -right-28 top-[50%] rounded-full text-5xl transition-all hover:bg-red-400'
         }
       />
     </div>

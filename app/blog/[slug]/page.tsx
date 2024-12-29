@@ -1,15 +1,14 @@
+import ArticleLayout from '@/components/Article/ArticleLayout';
+import { Tag } from '@/components/HeroBlog/Tag';
+import MarkdownDisplay from '@/components/ui/MarkdownDispaly';
+import { getPostBySlug, PostMetadata } from '@/libs/posts';
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
 import { Metadata } from 'next';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { useMDXComponents } from '@/mdx-components';
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getPostBySlug, PostMetadata } from '@/libs/posts';
-import React from 'react';
-import { Tag } from '@/components/HeroBlog/Tag';
-import ArticleLayout from '@/components/Article/ArticleLayout';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import path from 'path';
 
 export async function generateStaticParams() {
   const posts = fs.readdirSync('blog');
@@ -22,9 +21,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const filePath = path.join('blog', `${params.slug}.mdx`);
+  const { slug } = await params;
+  const filePath = path.join('blog', `${slug}.mdx`);
 
   const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
   const { data } = matter(markdownWithMeta);
@@ -38,7 +38,7 @@ export async function generateMetadata({
     openGraph: {
       title: data.title,
       description: post.description,
-      url: `https://xisra.com/blog/${params.slug}`,
+      url: `https://xisra.com/blog/${slug}`,
       type: 'article',
       // authors: [post.author],
       tags: post.keywords,
@@ -46,40 +46,48 @@ export async function generateMetadata({
       modifiedTime: post.createdAt,
       images: [
         {
-          url: process.env.NODE_ENV === 'production'? `https://xisra.com${post.imageUrl}`: post.imageUrl,
+          url:
+            process.env.NODE_ENV === 'production'
+              ? `https://xisra.com${post.imageUrl}`
+              : post.imageUrl,
           width: 1280,
           height: 720,
           alt: post.title,
         },
       ],
-    }
+    },
   };
 }
 
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug;
+  const { slug } = await params;
   const post = getPostBySlug(slug);
-
-  const components = useMDXComponents({});
 
   if (!post) {
     return notFound();
   }
 
   return (
-    <>
+    <section>
+      <Link
+        href={'/blog'}
+        aria-label='Back to blog'
+        className='mb-4 block text-gray-400 transition-colors duration-200 hover:text-gray-600'
+      >
+        Back to blog
+      </Link>
       <Image
         src={post.data.imageUrl}
         width={1280}
         height={720}
         alt={post.data.slug}
-        className={'mb-10 mt-24 h-80 w-auto rounded-lg'}
+        aria-label={post.data.title}
+        className={'mb-10 h-80 w-auto rounded-lg'}
       />
-
       <h1 className={'mb-2 text-5xl font-extralight'}>{post.data.title}</h1>
       <h6
         className={'mb-2 font-bold'}
@@ -91,8 +99,8 @@ export default async function BlogPost({
         ))}
       </div>
       <ArticleLayout>
-        <MDXRemote source={post.content} components={components} />
+        <MarkdownDisplay>{post.content}</MarkdownDisplay>
       </ArticleLayout>
-    </>
+    </section>
   );
 }

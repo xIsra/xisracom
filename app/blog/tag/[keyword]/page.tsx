@@ -26,23 +26,35 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { keyword: string };
+  params: Promise<{ keyword: string }>;
 }): Promise<Metadata> {
+  const { keyword } = await params;
   return {
-    title: `Posts tagged with ${params.keyword}`,
-    keywords: [params.keyword],
+    title: `Posts tagged with ${keyword}`,
+    keywords: [keyword],
   };
 }
 
 export default async function BlogPost({
   params,
 }: {
-  params: { keyword: string };
+  params: Promise<{ keyword: string }>;
 }) {
-  const keyword = params.keyword;
+  const { keyword } = await params;
 
   const posts = await getPosts();
   const keywordPosts = posts.filter((post) => post.keywords?.includes(keyword));
 
-  return <PostsGrid posts={keywordPosts} />;
+  return (
+    <>
+      <h1 className={'mb-12 font-lexend text-6xl font-extralight'}>
+        Tag: {keyword}
+      </h1>
+      {keywordPosts.length ? (
+        <PostsGrid posts={keywordPosts} />
+      ) : (
+        <p>No posts found for tag: {keyword}</p>
+      )}
+    </>
+  );
 }

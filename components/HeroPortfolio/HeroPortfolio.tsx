@@ -8,9 +8,7 @@ export function HeroPortfolio() {
   return (
     <section id='portfolio' className='relative min-h-screen bg-red-400'>
       <div className='mx-auto flex h-full flex-col justify-center'>
-        {/* Hero content */}
         <div className='py-24 md:py-32'>
-          {/* Section header */}
           <div className='px-4 pb-12 text-center md:pb-16'>
             <h2 className='mb-6 font-lexend text-6xl font-extralight'>
               {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -66,7 +64,6 @@ export function HeroPortfolio() {
               <Image
                 src={channelCover}
                 alt='channel cover'
-                layout='fill'
                 className='scale-115 transform object-cover opacity-5 blur-[4px] filter'
                 loading='lazy'
               />
@@ -74,7 +71,6 @@ export function HeroPortfolio() {
 
             <div className='relative z-10 py-24 lg:py-36'>
               <h2 className='mb-6 font-lexend text-6xl font-extralight'>
-                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 My Youtube channel
               </h2>
               <p className='bg-gradient-to-bl from-primary-200 to-secondary-100 bg-clip-text font-bold text-transparent'>
